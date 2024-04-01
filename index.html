@@ -4,33 +4,66 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Upper Horton Sports Club</title>
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Basic styling */
+        body {
+            font-family: 'Georgia', serif; /* Modern serif font */
+            margin: 0;
+            padding: 0;
+            background-color: #e6f0ff; /* Light blue background */
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            color: #003366; /* Dark blue heading color */
+        }
+        /* Banner image */
+        .banner {
+            background-image: url('https://example.com/path/to/your/banner-image.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 300px; /* Adjust height as needed */
+        }
+        /* Opening hours section */
+        .opening-hours {
+            margin-top: 20px;
+            color: #333; /* Dark gray text color */
+        }
+        /* Contact phone number */
+        .contact {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
-    <header>
+    <div class="banner"></div>
+    <div class="container">
         <h1>Welcome to Upper Horton Sports Club</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-            </ul>
-        </nav>
-    </header>
+        <p>Your friendly community sports club!</p>
 
-    <section class="opening-hours">
-        <h2>Opening Hours</h2>
-        <p>Our club is open on the following days:</p>
-        <ul>
-            <li>Wednesday: 5:00 PM - 9:00 PM</li>
-            <li>Thursday: 5:00 PM - 10:30 PM</li>
-            <li>Friday: 5:00 PM - 11:00 PM</li>
-            <li>Saturday: 5:00 PM - 11:00 PM</li>
-            <li>Sunday: 12:00 PM - 9:00 PM</li>
-        </ul>
-    </section>
+        <!-- About Page -->
+        <h2>About Us</h2>
+        <p>Learn more about our club...</p>
 
-    <footer>
-        <p>Contact us: <a href="tel:(02)67827249">(02) 6782 7249</a></p>
-    </footer>
+        <!-- Opening Hours Section -->
+        <div class="opening-hours">
+            <h2>Opening Hours</h2>
+            <p>Wednesday: 5:00 PM - 9:00 PM<br>
+               Thursday: 5:00 PM - 10:30 PM<br>
+               Friday: 5:00 PM - 11:00 PM<br>
+               Saturday: 5:00 PM - 11:00 PM<br>
+               Sunday: 12:00 PM - 9:00 PM</p>
+        </div>
+
+        <!-- Contact Phone Number -->
+        <div class="contact">
+            <p>Contact us: <a href="tel:(02) 6782 7249">(02) 6782 7249</a></p>
+        </div>
+    </div>
 </body>
 </html>
+
