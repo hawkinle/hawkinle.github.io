@@ -1,1 +1,22 @@
-theme: jekyll-theme-Cayman
+theme: jekyll-theme-cayman
+
+title: My Cayman-themed Jekyll Website
+description: A place to showcase my projects and ideas.
+author:
+  name: Your Name
+  email: your@email.com
+
+plugins:
+  - jekyll-feed
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+
+collections:
+  projects:
+    output: true
+    permalink: /projects/:title/
