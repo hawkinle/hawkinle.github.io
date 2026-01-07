@@ -3,112 +3,278 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Upper Horton Sports Club</title>
+    <title>Upper Horton Sports Club | Community, Sports & Recreation</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Welcome to Upper Horton Sports Club. Join our vibrant community for tennis, campdraft, bowls, motorbike trail rides, and good company. Family-friendly and open to all.">
+    <meta name="keywords" content="Upper Horton, Sports Club, Community Club, Tennis, Campdraft, Bowls, Motorbike Trail Ride, NSW Sports">
+    <meta name="author" content="Upper Horton Sports Club">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hawkinle.github.io/">
+    <meta property="og:title" content="Upper Horton Sports Club">
+    <meta property="og:description" content="Heart of the community. Join us for sports, meals, and camaraderie.">
+    <meta property="og:image" content="https://github.com/hawkinle/hawkinle.github.io/blob/main/images/banner.jpg?raw=true">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://hawkinle.github.io/">
+    <meta property="twitter:title" content="Upper Horton Sports Club">
+    <meta property="twitter:description" content="Heart of the community. Join us for sports, meals, and camaraderie.">
+    <meta property="twitter:image" content="https://github.com/hawkinle/hawkinle.github.io/blob/main/images/banner.jpg?raw=true">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
     <style>
-        /* Reset default styles */
+        /* Modern CSS Reset & Variables */
+        :root {
+            --primary-color: #003366;
+            --secondary-color: #f0f4f8;
+            --accent-color: #e63946;
+            --text-dark: #1a202c;
+            --text-light: #4a5568;
+            --white: #ffffff;
+            --max-width: 1200px;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --radius: 8px;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Helvetica Neue', Arial, sans-serif;
         }
 
-        /* Body styles */
         body {
-            background-color: #f5f5f5;
-            color: #333;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--secondary-color);
+            color: var(--text-dark);
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
 
-        /* Header styles */
+        /* Typography */
+        h1, h2, h3 {
+            font-family: 'Merriweather', serif;
+            color: var(--primary-color);
+            line-height: 1.3;
+        }
+
+        h1 { font-size: 2.5rem; margin-bottom: 1rem; }
+        h2 { font-size: 1.8rem; margin-bottom: 1.5rem; border-bottom: 2px solid #e2e8f0; padding-bottom: 0.5rem; display: inline-block; }
+        h3 { font-size: 1.2rem; font-weight: 700; color: var(--text-dark); margin-bottom: 0.5rem; }
+        p { margin-bottom: 1rem; color: var(--text-light); }
+        a { color: var(--primary-color); text-decoration: none; transition: color 0.2s; }
+        a:hover { color: var(--accent-color); }
+
+        /* Header / Hero Section */
         header {
-            background-image: url('https://github.com/hawkinle/hawkinle.github.io/blob/main/images/banner.jpg?raw=true');
+            background-image: linear-gradient(rgba(0, 51, 102, 0.8), rgba(0, 51, 102, 0.6)), url('https://github.com/hawkinle/hawkinle.github.io/blob/main/images/banner.jpg?raw=true');
             background-size: cover;
             background-position: center;
-            margin: 10px;
-            height: auto; /* Changed from fixed height to auto */
-            padding: 20% 0; /* Adjust the padding to maintain aspect ratio */
+            color: var(--white);
+            padding: 6rem 1rem;
             text-align: center;
-            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            box-shadow: var(--shadow);
         }
 
-        /* Adjust header padding for mobile devices */
-        @media only screen and (max-width: 768px) {
-            header {
-                padding: 40% 0; /* Increase padding for smaller screens */
+        header h1 {
+            color: var(--white);
+            font-size: 3rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            margin-bottom: 1rem;
+        }
+
+        header p {
+            font-size: 1.25rem;
+            color: #e2e8f0;
+            max-width: 600px;
+        }
+
+        /* Main Content */
+        main {
+            flex: 1;
+            width: 100%;
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 3rem 1.5rem;
+            display: grid;
+            gap: 3rem;
+        }
+
+        /* Cards / Sections */
+        section {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            transition: transform 0.2s ease;
+        }
+
+        section:hover {
+            transform: translateY(-2px);
+        }
+
+        /* About Section */
+        .about-text {
+            font-size: 1.1rem;
+        }
+
+        /* Opening Hours List */
+        .hours-list {
+            list-style: none;
+        }
+
+        .hours-list li {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid #edf2f7;
+        }
+
+        .hours-list li:last-child {
+            border-bottom: none;
+        }
+
+        .day { font-weight: 600; color: var(--primary-color); }
+        .time { color: var(--text-light); text-align: right;}
+        .note { display: block; font-size: 0.85rem; color: #718096; font-style: italic; margin-top: 0.25rem; }
+
+        /* Contact CTA */
+        .cta-button {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            margin-top: 1rem;
+            box-shadow: 0 4px 6px rgba(0, 51, 102, 0.2);
+        }
+
+        .cta-button:hover {
+            background-color: #004080;
+            color: white;
+            transform: translateY(-1px);
+        }
+
+        .phone-number {
+            font-size: 1.5rem;
+            font-weight: 700;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: #cbd5e0;
+            text-align: center;
+            padding: 2rem;
+            margin-top: auto;
+        }
+
+        footer p { color: #cbd5e0; font-size: 0.9rem; }
+
+        /* Responsive Design */
+        @media (min-width: 768px) {
+            main {
+                grid-template-columns: 2fr 1fr; /* 2/3 About, 1/3 Sidebar */
+            }
+
+            .about-section {
+                grid-column: 1 / 2;
+                grid-row: 1 / 3;
+            }
+
+            .hours-section {
+                grid-column: 2 / 3;
+            }
+
+            .contact-section {
+                grid-column: 2 / 3;
             }
         }
 
-        h1 {
-            font-size: 36px;
-            margin-bottom: 10px;
-        }
-
-        p {
-            font-size: 18px;
-        }
-
-        /* Container styles */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        /* Opening hours styles */
-        .opening-hours {
-            margin-top: 20px;
-        }
-
-        h2 {
-            font-size: 24px;
-            margin-bottom: 10px;
-        }
-
-        p.opening-hours {
-            font-size: 16px;
-        }
-
-        /* Contact styles */
-        .contact {
-            margin-top: 20px;
-            font-weight: bold;
-        }
-
-        a {
-            color: #003366;
-            text-decoration: none;
+        @media (max-width: 768px) {
+            header h1 { font-size: 2rem; }
+            section { padding: 1.5rem; }
         }
     </style>
 </head>
 <body>
+
     <header>
-        <h1></h1>
-        <p></p>
+        <h1>Upper Horton Sports Club</h1>
+        <p>The heart of our vibrant community.</p>
     </header>
 
-    <div class="container">
-        <section>
+    <main>
+        <section class="about-section">
             <h2>About Us</h2>
-            <p>Welcome to the Upper Horton Sports Club, the heart of our vibrant community. We are a small, community-run club, deeply rooted in our local area and dedicated to growing alongside it. Our mission is to foster a spirit of camaraderie, sportsmanship, and community engagement, and we encourage everyone in our community to participate in our facilities.</p> 
-
-            <p>If you're interested in a game of tennis, the thrill of a campdraft, the adventure of a motorbike trail ride, a relaxing game of bowls or simply enjoying a cold beer in good company, we've got you covered. At Upper Horton Sports Club, we're more than just a sports club - we're a family. We look forward to welcoming you and sharing the many experiences we have to offer.</p>
+            <div class="about-text">
+                <p>Welcome to the Upper Horton Sports Club. We are a small, community-run club, deeply rooted in our local area and dedicated to growing alongside it. Our mission is to foster a spirit of camaraderie, sportsmanship, and community engagement, and we encourage everyone in our community to participate in our facilities.</p>
+                <p>If you're interested in a game of <strong>tennis</strong>, the thrill of a <strong>campdraft</strong>, the adventure of a <strong>motorbike trail ride</strong>, a relaxing game of <strong>bowls</strong>, or simply enjoying a cold beer in good company, we've got you covered.</p>
+                <p>At Upper Horton Sports Club, we're more than just a sports club — we're a family. We look forward to welcoming you and sharing the many experiences we have to offer.</p>
+            </div>
         </section>
 
-        <section class="opening-hours">
-            <h2>Opening Hours</h2> 
-            <h3>(All opening hours are subject to patronage)</h3>
-            <p class="opening-hours">
-                Wednesday: 5:00 PM - 9:00 PM<br>
-                Thursday: 5:00 PM - 9:00 PM<br>
-                Friday: 5:00 PM - 11:00 PM (Meals available)<br>
-                Saturday: 5:00 PM - 11:00 PM<br>
-                Sunday: 12:00 PM - 3:00 PM (Lunch) 5:00 PM - 9:00 PM (Pizzas)
-            </p>
+        <section class="hours-section">
+            <h2>Opening Hours</h2>
+            <p><em>Subject to patronage</em></p>
+            <ul class="hours-list">
+                <li>
+                    <span class="day">Wednesday</span>
+                    <span class="time">5:00 PM - 9:00 PM</span>
+                </li>
+                <li>
+                    <span class="day">Thursday</span>
+                    <span class="time">5:00 PM - 9:00 PM</span>
+                </li>
+                <li>
+                    <span class="day">Friday</span>
+                    <div style="text-align: right;">
+                        <span class="time">5:00 PM - 11:00 PM</span>
+                        <span class="note">Meals available</span>
+                    </div>
+                </li>
+                <li>
+                    <span class="day">Saturday</span>
+                    <span class="time">5:00 PM - 11:00 PM</span>
+                </li>
+                <li>
+                    <span class="day">Sunday</span>
+                    <div style="text-align: right;">
+                        <span class="time">12:00 PM - 3:00 PM (Lunch)</span><br>
+                        <span class="time">5:00 PM - 9:00 PM (Pizzas)</span>
+                    </div>
+                </li>
+            </ul>
         </section>
 
-        <section class="contact">
-            <p>Contact us: <a href="tel:(02) 6782 7249">(02) 6782 7249</a></p>
+        <section class="contact-section" style="text-align: center;">
+            <h2>Contact Us</h2>
+            <p>Call us to book a table or ask about events.</p>
+            <a href="tel:0267827249" class="phone-number">(02) 6782 7249</a>
+            <a href="tel:0267827249" class="cta-button">Call Now</a>
         </section>
-    </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Upper Horton Sports Club. All rights reserved.</p>
+        <p>Serving the Upper Horton Community.</p>
+    </footer>
+
 </body>
 </html>
