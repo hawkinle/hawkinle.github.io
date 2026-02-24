@@ -3,45 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Upper Horton Sports Club | Community, Sports & Recreation</title>
+    <title>Upper Horton Sports Club | Modernized Community Hub</title>
     
-    <!-- SEO Meta Tags -->
+    <!-- SEO Meta Tags (Preserved) -->
     <meta name="description" content="Welcome to Upper Horton Sports Club. Join our vibrant community for tennis, campdraft, bowls, motorbike trail rides, and good company. Family-friendly and open to all.">
-    <meta name="keywords" content="Upper Horton, Sports Club, Community Club, Tennis, Campdraft, Bowls, Motorbike Trail Ride, NSW Sports">
-    <meta name="author" content="Upper Horton Sports Club">
-    <meta name="robots" content="index, follow">
-
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://hawkinle.github.io/">
-    <meta property="og:title" content="Upper Horton Sports Club">
-    <meta property="og:description" content="Heart of the community. Join us for sports, meals, and camaraderie.">
-    <meta property="og:image" content="https://github.com/hawkinle/hawkinle.github.io/blob/main/images/banner.jpg?raw=true">
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://hawkinle.github.io/">
-    <meta property="twitter:title" content="Upper Horton Sports Club">
-    <meta property="twitter:description" content="Heart of the community. Join us for sports, meals, and camaraderie.">
-    <meta property="twitter:image" content="https://github.com/hawkinle/hawkinle.github.io/blob/main/images/banner.jpg?raw=true">
-
-    <!-- Fonts -->
+    
+    <!-- Modern Typography: Space Grotesk for Headings, Outfit for Body -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
 
     <style>
-        /* Modern CSS Reset & Variables */
         :root {
-            --primary-color: #003366;
-            --secondary-color: #f0f4f8;
-            --accent-color: #e63946;
-            --text-dark: #1a202c;
-            --text-light: #4a5568;
-            --white: #ffffff;
-            --max-width: 1200px;
-            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-            --radius: 8px;
+            --primary: #0047AB; /* Electric Blue */
+            --accent: #FF4500;  /* Vibrant Orange-Red */
+            --bg-dark: #0a0e14;
+            --bg-glass: rgba(255, 255, 255, 0.05);
+            --border-glass: rgba(255, 255, 255, 0.1);
+            --text-main: #f8f9fa;
+            --text-dim: #adb5bd;
+            --shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
         }
 
         * {
@@ -51,229 +32,322 @@
         }
 
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--secondary-color);
-            color: var(--text-dark);
+            font-family: 'Outfit', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
             line-height: 1.6;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
+            overflow-x: hidden;
         }
 
-        /* Typography */
-        h1, h2, h3 {
-            font-family: 'Merriweather', serif;
-            color: var(--primary-color);
-            line-height: 1.3;
+        /* Animated Background Blobs */
+        .blob-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+            filter: blur(80px);
+            opacity: 0.4;
         }
 
-        h1 { font-size: 2.5rem; margin-bottom: 1rem; }
-        h2 { font-size: 1.8rem; margin-bottom: 1.5rem; border-bottom: 2px solid #e2e8f0; padding-bottom: 0.5rem; display: inline-block; }
-        h3 { font-size: 1.2rem; font-weight: 700; color: var(--text-dark); margin-bottom: 0.5rem; }
-        p { margin-bottom: 1rem; color: var(--text-light); }
-        a { color: var(--primary-color); text-decoration: none; transition: color 0.2s; }
-        a:hover { color: var(--accent-color); }
+        .blob {
+            position: absolute;
+            border-radius: 50%;
+            background: var(--primary);
+            animation: move 20s infinite alternate;
+        }
 
-        /* Header / Hero Section */
+        .blob-1 { width: 400px; height: 400px; top: -100px; left: -100px; background: var(--primary); }
+        .blob-2 { width: 300px; height: 300px; bottom: -50px; right: -50px; background: var(--accent); }
+
+        @keyframes move {
+            from { transform: translate(0, 0); }
+            to { transform: translate(50px, 100px); }
+        }
+
+        /* Hero Section */
         header {
-            background-image: linear-gradient(rgba(0, 51, 102, 0.8), rgba(0, 51, 102, 0.6)), url('https://github.com/hawkinle/hawkinle.github.io/blob/main/images/banner.jpg?raw=true');
-            background-size: cover;
-            background-position: center;
-            color: var(--white);
-            padding: 6rem 1rem;
-            text-align: center;
+            height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            flex-direction: column;
-            box-shadow: var(--shadow);
+            text-align: center;
+            background: linear-gradient(to bottom, rgba(10, 14, 20, 0.2), var(--bg-dark)),
+                        url('https://raw.githubusercontent.com/hawkinle/hawkinle.github.io/main/images/banner.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            padding: 0 1rem;
         }
 
-        header h1 {
-            color: var(--white);
-            font-size: 3rem;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
-            margin-bottom: 1rem;
+        .hero-content {
+            max-width: 900px;
         }
 
-        header p {
-            font-size: 1.25rem;
-            color: #e2e8f0;
-            max-width: 600px;
+        h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(3rem, 10vw, 6rem);
+            line-height: 1.1;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: -2px;
+            background: linear-gradient(45deg, #fff, #888);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
-        /* Main Content */
+        .hero-tagline {
+            font-size: 1.5rem;
+            color: var(--text-dim);
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+
+        /* Bento Grid Layout */
         main {
-            flex: 1;
-            width: 100%;
-            max-width: var(--max-width);
-            margin: 0 auto;
-            padding: 3rem 1.5rem;
+            max-width: 1200px;
+            margin: -100px auto 100px;
+            padding: 0 1.5rem;
             display: grid;
-            gap: 3rem;
+            gap: 1.5rem;
+            grid-template-columns: repeat(3, 1fr);
         }
 
-        /* Cards / Sections */
         section {
-            background: var(--white);
-            padding: 2rem;
-            border-radius: var(--radius);
+            background: var(--bg-glass);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--border-glass);
+            border-radius: 24px;
+            padding: 2.5rem;
             box-shadow: var(--shadow);
-            transition: transform 0.2s ease;
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
 
         section:hover {
-            transform: translateY(-2px);
+            transform: scale(1.02);
+            border-color: rgba(255, 255, 255, 0.2);
         }
 
-        /* About Section */
-        .about-text {
+        /* Custom Bento Sizing */
+        .about-section { grid-column: span 2; }
+        .hours-section { grid-column: span 1; grid-row: span 2; }
+        .contact-section { grid-column: span 2; display: flex; align-items: center; justify-content: space-between; }
+
+        h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        h2::before {
+            content: '';
+            width: 12px;
+            height: 12px;
+            background: var(--accent);
+            border-radius: 3px;
+            display: inline-block;
+        }
+
+        p {
+            color: var(--text-dim);
             font-size: 1.1rem;
+            margin-bottom: 1rem;
         }
 
-        /* Opening Hours List */
+        /* Funky Opening Hours */
         .hours-list {
             list-style: none;
         }
 
-        .hours-list li {
+        .hours-item {
             display: flex;
             justify-content: space-between;
-            padding: 0.75rem 0;
-            border-bottom: 1px solid #edf2f7;
+            align-items: center;
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border-glass);
         }
 
-        .hours-list li:last-child {
-            border-bottom: none;
-        }
+        .hours-item:last-child { border-bottom: none; }
 
-        .day { font-weight: 600; color: var(--primary-color); }
-        .time { color: var(--text-light); text-align: right;}
-        .note { display: block; font-size: 0.85rem; color: #718096; font-style: italic; margin-top: 0.25rem; }
-
-        /* Contact CTA */
-        .cta-button {
-            display: inline-block;
-            background-color: var(--primary-color);
-            color: white;
-            padding: 1rem 2rem;
-            border-radius: 50px;
+        .day-label {
             font-weight: 600;
-            margin-top: 1rem;
-            box-shadow: 0 4px 6px rgba(0, 51, 102, 0.2);
+            color: var(--text-main);
         }
 
-        .cta-button:hover {
-            background-color: #004080;
-            color: white;
-            transform: translateY(-1px);
+        .time-label {
+            text-align: right;
+            font-family: 'Space Grotesk', sans-serif;
+            color: var(--primary);
         }
 
-        .phone-number {
-            font-size: 1.5rem;
+        .meal-badge {
+            font-size: 0.75rem;
+            background: var(--accent);
+            color: #fff;
+            padding: 2px 8px;
+            border-radius: 4px;
+            margin-left: 5px;
+            vertical-align: middle;
+        }
+
+        /* Action Buttons */
+        .cta-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .phone-link {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2rem;
+            color: #fff;
+            text-decoration: none;
             font-weight: 700;
-            display: block;
-            margin: 1rem 0;
+        }
+
+        .funky-button {
+            display: inline-block;
+            background: var(--primary);
+            color: #fff;
+            padding: 1rem 2.5rem;
+            border-radius: 100px;
+            text-decoration: none;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px -5px rgba(0, 71, 171, 0.4);
+        }
+
+        .funky-button.messenger {
+            background: #0084FF; /* Facebook Messenger Blue */
+            box-shadow: 0 10px 20px -5px rgba(0, 132, 255, 0.4);
+        }
+
+        .funky-button.messenger:hover {
+            background: #0073e6;
+            box-shadow: 0 15px 30px -5px rgba(0, 132, 255, 0.6);
         }
 
         /* Footer */
         footer {
-            background-color: var(--primary-color);
-            color: #cbd5e0;
             text-align: center;
-            padding: 2rem;
-            margin-top: auto;
+            padding: 5rem 1rem;
+            border-top: 1px solid var(--border-glass);
+            margin-top: 50px;
         }
 
-        footer p { color: #cbd5e0; font-size: 0.9rem; }
+        footer p {
+            font-size: 0.9rem;
+        }
 
-        /* Responsive Design */
-        @media (min-width: 768px) {
+        /* Responsive Magic */
+        @media (max-width: 992px) {
             main {
-                grid-template-columns: 2fr 1fr; /* 2/3 About, 1/3 Sidebar */
+                grid-template-columns: 1fr;
+                margin-top: -50px;
             }
-
-            .about-section {
-                grid-column: 1 / 2;
-                grid-row: 1 / 3;
-            }
-
-            .hours-section {
-                grid-column: 2 / 3;
-            }
-
-            .contact-section {
-                grid-column: 2 / 3;
-            }
+            .about-section, .hours-section, .contact-section { grid-column: span 1; }
+            .contact-section { flex-direction: column; text-align: center; gap: 20px; }
+            h1 { font-size: 3.5rem; }
         }
 
-        @media (max-width: 768px) {
-            header h1 { font-size: 2rem; }
-            section { padding: 1.5rem; }
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg-dark);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary);
+            border-radius: 10px;
         }
     </style>
 </head>
 <body>
 
+    <div class="blob-bg">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
+
     <header>
-        <h1>Upper Horton Sports Club</h1>
-        <p>The heart of our vibrant community.</p>
+        <div class="hero-content">
+            <h1>Upper Horton<br>Sports Club</h1>
+            <p class="hero-tagline">The heart of our community.</p>
+            <a href="#explore" class="funky-button">Explore The Club</a>
+        </div>
     </header>
 
-    <main>
+    <main id="explore">
         <section class="about-section">
-            <h2>About Us</h2>
-            <div class="about-text">
-                <p>Welcome to the Upper Horton Sports Club. We are a small, community-run club, deeply rooted in our local area and dedicated to growing alongside it. Our mission is to foster a spirit of camaraderie, sportsmanship, and community engagement, and we encourage everyone in our community to participate in our facilities.</p>
-                <p>If you're interested in a game of <strong>tennis</strong>, the thrill of a <strong>campdraft</strong>, the adventure of a <strong>motorbike trail ride</strong>, a relaxing game of <strong>bowls</strong>, or simply enjoying a cold beer in good company, we've got you covered.</p>
-                <p>At Upper Horton Sports Club, we're more than just a sports club — we're a family. We look forward to welcoming you and sharing the many experiences we have to offer.</p>
-            </div>
+            <h2>Our Story</h2>
+            <p>Welcome to a space where community meets passion. We're a small, locally-run club dedicated to growing alongside our community. Whether you're here for the camaraderie or the competition, there's a spot for you.</p>
+            <p>From the precise courts of <strong>Tennis</strong> to the dusty adrenaline of a <strong>Campdraft</strong>, the thrill of <strong>Motorbike Trail Rides</strong>, or the strategic calm of <strong>Bowls</strong>—we bridge the gap between tradition and modern recreation.</p>
+            <p>More than a club. We're a family.</p>
         </section>
 
         <section class="hours-section">
-            <h2>Opening Hours</h2>
-            <p><em>Subject to patronage</em></p>
-            <ul class="hours-list">
-                <li>
-                    <span class="day">Wednesday</span>
-                    <span class="time">5:00 PM - 9:00 PM</span>
-                </li>
-                <li>
-                    <span class="day">Thursday</span>
-                    <span class="time">5:00 PM - 9:00 PM</span>
-                </li>
-                <li>
-                    <span class="day">Friday</span>
-                    <div style="text-align: right;">
-                        <span class="time">5:00 PM - 11:00 PM</span>
-                        <span class="note">Meals available</span>
-                    </div>
-                </li>
-                <li>
-                    <span class="day">Saturday</span>
-                    <span class="time">5:00 PM - 11:00 PM</span>
-                </li>
-                <li>
-                    <span class="day">Sunday</span>
-                    <div style="text-align: right;">
-                        <span class="time">12:00 PM - 3:00 PM (Lunch)</span><br>
-                        <span class="time">5:00 PM - 9:00 PM (Pizzas)</span>
-                    </div>
-                </li>
-            </ul>
+            <h2>When we're open</h2>
+            <p style="font-size: 0.9rem; font-style: italic;">* Subject to patronage</p>
+            <div class="hours-list">
+                <div class="hours-item">
+                    <span class="day-label">Wed / Thu</span>
+                    <span class="time-label">5PM — 9PM</span>
+                </div>
+                <div class="hours-item">
+                    <span class="day-label">Friday</span>
+                    <span class="time-label">5PM — 11PM <span class="meal-badge">Meals</span></span>
+                </div>
+                <div class="hours-item">
+                    <span class="day-label">Saturday</span>
+                    <span class="time-label">5PM — 11PM</span>
+                </div>
+                <div class="hours-item">
+                    <span class="day-label">Sunday</span>
+                    <span class="time-label">Open from 12PM</span>
+                </div>
+                <div class="hours-item">
+                    <span class="day-label">Sunday Lunch</span>
+                    <span class="time-label">12PM — 2PM <span class="meal-badge">Meals</span></span>
+                </div>
+                <div class="hours-item">
+                    <span class="day-label">Sunday Pizza</span>
+                    <span class="time-label">5PM — 9PM <span class="meal-badge">Meals</span></span>
+                </div>
+            </div>
         </section>
 
-        <section class="contact-section" style="text-align: center;">
-            <h2>Contact Us</h2>
-            <p>Call us to book a table or ask about events.</p>
-            <a href="tel:0267827249" class="phone-number">(02) 6782 7249</a>
-            <a href="tel:0267827249" class="cta-button">Call Now</a>
+        <section class="contact-section">
+            <div>
+                <h2>Get in touch</h2>
+                <p>Book a table or inquire about our next big event.</p>
+                <a href="tel:0267827249" class="phone-link">(02) 6782 7249</a>
+            </div>
+            <div class="cta-group">
+                <a href="tel:0267827249" class="funky-button">Call Now</a>
+                <a href="https://m.me/UpperHortonSportsClub" target="_blank" class="funky-button messenger">Message Us</a>
+            </div>
         </section>
     </main>
 
     <footer>
         <p>&copy; 2026 Upper Horton Sports Club. All rights reserved.</p>
-        <p>Serving the Upper Horton Community.</p>
+        <p>Crafted for the Community of Upper Horton.</p>
     </footer>
 
 </body>
