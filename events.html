@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upcoming Events | Upper Horton Sports Club</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #0047AB;
+            --accent: #FF4500;
+            --bg-dark: #0a0e14;
+            --bg-glass: rgba(255, 255, 255, 0.05);
+            --border-glass: rgba(255, 255, 255, 0.1);
+            --text-main: #f8f9fa;
+            --text-dim: #adb5bd;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            margin: 0;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        nav {
+            padding: 1.5rem 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .back-link {
+            color: var(--text-dim);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .back-link:hover { color: #fff; }
+
+        header {
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(2.5rem, 8vw, 4rem);
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: -1px;
+            background: linear-gradient(45deg, #fff, #888);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .events-grid {
+            display: grid;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        /* --- EVENT CARD --- */
+        .event-card {
+            background: var(--bg-glass);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--border-glass);
+            border-radius: 24px;
+            padding: 2.5rem;
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .event-card:hover {
+            transform: scale(1.01);
+            border-color: rgba(255,255,255,0.2);
+            background: rgba(255,255,255,0.08);
+        }
+
+        .event-date {
+            min-width: 150px;
+            text-align: center;
+            border-right: 2px solid var(--accent);
+            padding-right: 2rem;
+        }
+
+        .date-day {
+            display: block;
+            font-size: 1.8rem;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .date-month {
+            display: block;
+            text-transform: uppercase;
+            color: var(--accent);
+            font-weight: 700;
+            letter-spacing: 2px;
+            font-size: 0.9rem;
+            margin-top: 5px;
+        }
+
+        .event-info {
+            flex-grow: 1;
+        }
+
+        .event-info h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            margin: 0 0 0.5rem 0;
+            font-size: 1.8rem;
+            color: #fff;
+        }
+
+        .event-info p {
+            margin: 0;
+            color: var(--text-dim);
+            font-size: 1.1rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--primary);
+            color: #fff;
+            padding: 0.8rem 1.8rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 1.5rem;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 71, 171, 0.3);
+            filter: brightness(1.1);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid var(--border-glass);
+            margin-left: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .event-card { flex-direction: column; text-align: center; gap: 1.5rem; padding: 2rem; }
+            .event-date { border-right: none; border-bottom: 2px solid var(--accent); padding: 0 0 1rem 0; min-width: auto; width: 100%; }
+            .btn-secondary { margin-left: 0; }
+        }
+
+        footer {
+            text-align: center;
+            padding: 5rem 0;
+            color: var(--text-dim);
+            font-size: 0.9rem;
+            border-top: 1px solid var(--border-glass);
+            margin-top: 4rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <nav>
+            <a href="index.html" class="back-link">← Back to Home</a>
+        </nav>
+
+        <header>
+            <h1>Upcoming Events</h1>
+            <p>What's happening at the Club.</p>
+        </header>
+
+        <div class="events-grid">
+
+            <!-- EVENT: Footy Tips -->
+            <div class="event-card">
+                <div class="event-date">
+                    <span class="date-day">MARCH</span>
+                    <span class="date-month">STARTING</span>
+                </div>
+                <div class="event-info">
+                    <h2>Footy Tips</h2>
+                    <p>$50 entry fee. You can join the competition by messaging us on Facebook or seeing us at the club in person!</p>
+                    <a href="https://m.me/UpperHortonSportsClub" class="btn">Message Us to Join</a>
+                </div>
+            </div>
+
+            <!-- EVENT: Family Motorbike Weekend -->
+            <div class="event-card">
+                <div class="event-date">
+                    <span class="date-day">MAY</span>
+                    <span class="date-month">LAST WEEKEND</span>
+                </div>
+                <div class="event-info">
+                    <h2>Family Motorbike Weekend</h2>
+                    <p>Get ready for our next Family Motorbike Weekend! Join us for a great weekend of riding and community. Details and registration can be found on our trail ride page.</p>
+                    <div style="display: flex; gap: 10px; flex-wrap: wrap; justify-content: flex-start;">
+                        <a href="https://www.facebook.com/Upperhortontrailride" target="_blank" class="btn">See Details Here</a>
+                        <a href="https://m.me/UpperHortonSportsClub" class="btn btn-secondary">Inquire</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <footer>
+            <p>&copy; 2026 Upper Horton Sports Club. All rights reserved.</p>
+        </footer>
+    </div>
+
+</body>
+</html>
