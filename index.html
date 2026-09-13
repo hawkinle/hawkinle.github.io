@@ -149,6 +149,7 @@
         }
 
         /* Custom Bento Sizing */
+        .meatfest-card { grid-column: span 3; }
         .about-section { grid-column: span 2; }
         .hours-section { grid-column: span 1; grid-row: span 2; }
         .contact-section { grid-column: span 2; display: flex; align-items: center; justify-content: space-between; }
@@ -308,12 +309,37 @@
             <p class="hero-tagline">The heart of our community.</p>
             <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
                 <a href="#explore" class="funky-button">Explore The Club</a>
+                <a href="meatfest.html" class="funky-button" style="background: var(--accent); box-shadow: 0 10px 20px -5px rgba(255, 69, 0, 0.45);">🔥 Meat Fest ($15 Feast)</a>
                 <a href="events.html" class="funky-button" style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.2);">Upcoming Events</a>
             </div>
         </div>
     </header>
 
     <main id="explore">
+        <!-- Featured Event: Meat Fest 2026 -->
+        <section class="meatfest-card" style="background: linear-gradient(135deg, rgba(255, 69, 0, 0.12) 0%, rgba(255, 255, 255, 0.05) 100%); border: 1px solid rgba(255, 69, 0, 0.35);">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 12px; margin-bottom: 1.25rem;">
+                <span class="meal-badge" style="font-size: 0.85rem; padding: 4px 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;">
+                    Featured Event • Saturday, 26th September 2026
+                </span>
+                <span style="font-size: 0.85rem; color: #ff7849; font-weight: 700; border: 1px solid rgba(255, 69, 0, 0.4); padding: 4px 10px; border-radius: 6px; background: rgba(255, 69, 0, 0.1);">
+                    🔥 Smoker Spots 100% Sold Out
+                </span>
+            </div>
+            <h2 style="font-size: clamp(1.8rem, 4vw, 2.5rem); margin-bottom: 0.75rem;">Meat Fest 2026: The $15 Low & Slow Feast</h2>
+            <p style="font-size: 1.15rem; color: #f8f9fa; max-width: 900px; margin-bottom: 1.5rem;">
+                All pitmaster stations are officially sold out and the smokers will be roaring! Come down to Upper Horton Sports Club for an unforgettable, cheap, and fun <strong>$15 barbecue dinner</strong> piled high with competition smoked pork, beef brisket, and hot club roasted vegetables. Club Can Bar running all day, blind judging spectacles at 3 PM and 5 PM, awards at 6:30 PM, plus camping on site.
+            </p>
+            <div style="display: flex; gap: 1rem; align-items: center; flex-wrap: wrap;">
+                <a href="meatfest.html" class="funky-button" style="background: var(--accent); box-shadow: 0 10px 20px -5px rgba(255, 69, 0, 0.5);">
+                    Explore The Feast & Reserve Plates ($15) →
+                </a>
+                <a href="meatfest.html#schedule" class="funky-button" style="background: rgba(255, 255, 255, 0.1); border: 1px solid var(--border-glass);">
+                    View Turn-in Schedule
+                </a>
+            </div>
+        </section>
+
         <section class="about-section">
             <h2>Our Story</h2>
             <p>Welcome to a space where community meets passion. We're a small, locally-run club dedicated to growing alongside our community. Whether you're here for the camaraderie or the competition, there's a spot for you.</p>
