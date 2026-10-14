@@ -3,42 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Upper Horton Sports Club | Modernized Community Hub</title>
-    
-    <!-- SEO Meta Tags (Preserved) -->
-    <meta name="description" content="Welcome to Upper Horton Sports Club. Join our vibrant community for tennis, campdraft, bowls, motorbike trail rides, and good company. Family-friendly and open to all.">
-    <meta name="keywords" content="Upper Horton, Sports Club, Community Club, Tennis, Campdraft, Bowls, Motorbike Trail Ride, NSW Sports">
+    <title>Upper Horton Sports Club | Bar, Meals &amp; Events — Upper Horton NSW</title>
+
+    <meta name="description" content="Upper Horton Sports Club — cold beer, hearty meals and country hospitality in the Horton Valley. Open Wednesday to Sunday. Meals Friday nights, Sunday lunch and Sunday pizzas. 22 Cobbadah St, Upper Horton NSW. Ph (02) 6782 7249.">
+    <meta name="keywords" content="Upper Horton Sports Club, Upper Horton NSW, club meals, country pub, Sunday lunch, campdraft, bowls, tennis, motorbike trail ride, Gwydir">
     <meta name="author" content="Upper Horton Sports Club">
     <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://upperhortonsportsclub.com.au/">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="apple-touch-icon" href="images/banner_sml_update.jpg">
+    <meta name="theme-color" content="#0a0e14">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Upper Horton Sports Club">
     <meta property="og:url" content="https://upperhortonsportsclub.com.au/">
     <meta property="og:title" content="Upper Horton Sports Club">
-    <meta property="og:description" content="Heart of the community. Join us for sports, meals, and camaraderie.">
-    <meta property="og:image" content="https://github.com/hawkinle/hawkinle.github.io/blob/main/images/banner.jpg?raw=true">
+    <meta property="og:description" content="Heart of the community. Bar open Wed–Sun, meals Friday nights, Sunday lunch and pizzas. 22 Cobbadah St, Upper Horton NSW.">
+    <meta property="og:image" content="https://upperhortonsportsclub.com.au/images/banner.jpg">
+    <meta property="og:image:alt" content="Upper Horton Sports Club">
+    <meta property="og:locale" content="en_AU">
 
     <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://upperhortonsportsclub.com.au/">
-    <meta property="twitter:title" content="Upper Horton Sports Club">
-    <meta property="twitter:description" content="Heart of the community. Join us for sports, meals, and camaraderie.">
-    <meta property="twitter:image" content="https://github.com/hawkinle/hawkinle.github.io/blob/main/images/banner.jpg?raw=true">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://upperhortonsportsclub.com.au/">
+    <meta name="twitter:title" content="Upper Horton Sports Club">
+    <meta name="twitter:description" content="Heart of the community. Bar open Wed–Sun, meals Friday nights, Sunday lunch and pizzas. 22 Cobbadah St, Upper Horton NSW.">
+    <meta name="twitter:image" content="https://upperhortonsportsclub.com.au/images/banner.jpg">
 
     <!-- Modern Typography: Space Grotesk for Headings, Outfit for Body -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+
+    <!-- Local business structured data (helps show up in search + maps) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SportsActivityLocation",
+      "name": "Upper Horton Sports Club",
+      "url": "https://upperhortonsportsclub.com.au/",
+      "image": "https://upperhortonsportsclub.com.au/images/banner.jpg",
+      "description": "Community sports club and bar in the Horton Valley, open Wednesday to Sunday with meals on Friday nights and Sundays. Closing time depends on patronage.",
+      "telephone": "+61267827249",
+      "priceRange": "$",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "22 Cobbadah Street",
+        "addressLocality": "Upper Horton",
+        "addressRegion": "NSW",
+        "postalCode": "2347",
+        "addressCountry": "AU"
+      },
+      "geo": { "@type": "GeoCoordinates", "latitude": -30.1402931, "longitude": 150.4443969 },
+      "hasMap": "https://www.google.com/maps/search/?api=1&query=Upper%20Horton%20Sports%20Club%2022%20Cobbadah%20St%20Upper%20Horton%20NSW%202347",
+      "sameAs": ["https://www.facebook.com/UpperHortonSportsClub"],
+      "openingHoursSpecification": [
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Wednesday","Thursday","Friday","Saturday"], "opens": "17:00" },
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "12:00" }
+      ]
+    }
+    </script>
 
     <style>
         :root {
             --primary: #0047AB; /* Electric Blue */
             --accent: #FF4500;  /* Vibrant Orange-Red */
+            --amber: #FFB347;   /* High-contrast ink for hours/times */
             --bg-dark: #0a0e14;
             --bg-glass: rgba(255, 255, 255, 0.05);
             --border-glass: rgba(255, 255, 255, 0.1);
             --text-main: #f8f9fa;
-            --text-dim: #adb5bd;
+            --text-dim: #c7cdd3;
             --shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
         }
 
@@ -54,6 +90,72 @@
             color: var(--text-main);
             line-height: 1.6;
             overflow-x: hidden;
+        }
+
+        /* Slim fixed top bar — phone + quick links always reachable */
+        .topbar {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 200;
+            background: rgba(10, 14, 20, 0.72);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-glass);
+        }
+
+        .topbar-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0.5rem 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+
+        .topbar-brand {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            color: #fff;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: -0.5px;
+            font-size: 0.95rem;
+            white-space: nowrap;
+        }
+
+        .topbar-links { display: flex; align-items: center; gap: 1.25rem; }
+
+        .topbar-links a {
+            color: var(--text-dim);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            padding: 0.5rem 0;
+            white-space: nowrap;
+        }
+
+        .topbar-links a:hover { color: #fff; }
+
+        .topbar-call {
+            background: var(--accent);
+            color: #fff !important;
+            padding: 0.55rem 1.1rem !important;
+            border-radius: 50px;
+            min-height: 44px;
+            display: inline-flex;
+            align-items: center;
+            letter-spacing: 0.5px;
+        }
+
+        .brand-short { display: none; }
+
+        @media (max-width: 620px) {
+            .brand-full { display: none; }
+            .brand-short { display: inline; }
+            .hide-sm { display: none; }   /* keep the bar from overflowing on a phone */
+            .topbar-inner { padding: 0.45rem 1rem; }
+            .topbar-links { gap: 1rem; }
         }
 
         /* Animated Background Blobs */
@@ -85,17 +187,20 @@
 
         /* Hero Section */
         header {
-            height: 100vh;
+            min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
-            background: linear-gradient(to bottom, rgba(10, 14, 20, 0.2), var(--bg-dark)),
-                        url('https://raw.githubusercontent.com/hawkinle/hawkinle.github.io/main/images/banner.jpg');
+            /* hero_banner.jpg is banner.jpg with the navy separator band (which had
+               "UPPER HORTON SPORTS CLUB" baked into it) removed, so the club name is not
+               printed twice behind the H1. banner.jpg is untouched and still used for og:image. */
+            background: linear-gradient(to bottom, rgba(10, 14, 20, 0.55), var(--bg-dark)),
+                        url('images/hero_banner.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
-            padding: 0 1rem;
+            padding: 2rem 1rem;
         }
 
         .hero-content {
@@ -104,15 +209,16 @@
 
         h1 {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: clamp(3rem, 10vw, 6rem);
+            font-size: clamp(2.75rem, 10vw, 6rem);
             line-height: 1.1;
             font-weight: 700;
             margin-bottom: 1.5rem;
             text-transform: uppercase;
             letter-spacing: -2px;
-            background: linear-gradient(45deg, #fff, #888);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            /* Solid white, NOT a gradient. Measured over the actual banner photo, the
+               old #fff->#ccc gradient fill fell to 2.27:1 at its darker end (below the
+               3:1 large-text AA threshold). Solid #fff over the deepened overlay clears it. */
+            color: #fff;
         }
 
         .hero-tagline {
@@ -122,10 +228,17 @@
             font-weight: 300;
         }
 
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
         /* Bento Grid Layout */
         main {
             max-width: 1200px;
-            margin: -100px auto 100px;
+            margin: -64px auto 100px;
             padding: 0 1.5rem;
             display: grid;
             gap: 1.5rem;
@@ -149,10 +262,11 @@
         }
 
         /* Custom Bento Sizing */
-        .meatfest-card { grid-column: span 3; }
+        .tonight-card { grid-column: span 3; }
         .about-section { grid-column: span 2; }
+        .whatson-section { grid-column: span 2; }
         .hours-section { grid-column: span 1; grid-row: span 2; }
-        .contact-section { grid-column: span 2; display: flex; align-items: center; justify-content: space-between; }
+        .contact-section { grid-column: span 3; display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap; }
 
         h2 {
             font-family: 'Space Grotesk', sans-serif;
@@ -171,6 +285,7 @@
             background: var(--accent);
             border-radius: 3px;
             display: inline-block;
+            flex: 0 0 auto;
         }
 
         p {
@@ -179,20 +294,85 @@
             margin-bottom: 1rem;
         }
 
-        /* Funky Opening Hours */
-        .hours-list {
-            list-style: none;
+        a { color: var(--amber); }
+
+        /* "Tonight at the Club" status strip */
+        /* OPAQUE on purpose. As a translucent card it straddled the hero photo (its top
+           100px sat over the banner image, the rest over flat page), so backdrop-blur
+           picked up the photo and made the card look blotchy with a seam. Opaque removes
+           the bleed-through and the overlap now reads as a deliberate floating card. */
+        .tonight-card {
+            background: linear-gradient(135deg, #241610 0%, #0f131a 100%);
+            border: 1px solid rgba(255, 69, 0, 0.45);
+            backdrop-filter: none;
+            -webkit-backdrop-filter: none;
+            box-shadow: 0 24px 60px -18px rgba(0, 0, 0, 0.85);
+            /* Deliberately tighter than the other cards so this status strip stays compact
+               and doesn't crowd the hero buttons sitting just above it. */
+            padding: 1.5rem 1.9rem;
         }
+
+        .status-line {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+            margin-bottom: 0.5rem;
+        }
+
+        .status-dot {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: #6c757d;
+            flex: 0 0 auto;
+        }
+
+        .status-dot.open { background: #35d07f; box-shadow: 0 0 12px rgba(53, 208, 127, 0.8); }
+        .status-dot.closed { background: #ff5a4d; box-shadow: 0 0 12px rgba(255, 90, 77, 0.7); }
+
+        .status-headline {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(1.2rem, 3.2vw, 1.7rem);
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .status-sub {
+            color: var(--text-dim);
+            font-size: 1rem;
+            margin-bottom: 0.75rem;
+        }
+
+        /* Opening Hours */
+        .hours-list { list-style: none; }
 
         .hours-item {
             display: flex;
             justify-content: space-between;
-            align-items: center;
-            padding: 1rem 0;
+            align-items: baseline;
+            gap: 0.75rem;
+            padding: 0.85rem 0.25rem;
             border-bottom: 1px solid var(--border-glass);
+            border-radius: 8px;
         }
 
         .hours-item:last-child { border-bottom: none; }
+
+        .hours-item.today {
+            background: rgba(255, 179, 71, 0.12);
+            border-left: 3px solid var(--amber);
+            padding-left: 0.75rem;
+        }
+
+        .hours-item.today .day-label::after {
+            content: ' • today';
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--amber);
+            vertical-align: middle;
+        }
 
         .day-label {
             font-weight: 600;
@@ -202,17 +382,47 @@
         .time-label {
             text-align: right;
             font-family: 'Space Grotesk', sans-serif;
-            color: var(--primary);
+            font-weight: 700;
+            color: var(--amber); /* was #0047AB — 2.29:1 on dark, now ~11:1 */
         }
 
+        .time-label .closed { color: #ff8a80; }
+
         .meal-badge {
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             background: var(--accent);
             color: #fff;
             padding: 2px 8px;
             border-radius: 4px;
             margin-left: 5px;
             vertical-align: middle;
+            white-space: nowrap;
+        }
+
+        .hours-note {
+            font-size: 0.95rem;
+            color: var(--text-dim);
+            margin-top: 1rem;
+            line-height: 1.55;
+        }
+
+        /* Address / Find us */
+        .address-block {
+            font-style: normal;
+            font-size: 1.15rem;
+            color: var(--text-dim);
+            line-height: 1.7;
+        }
+
+        .address-block strong { color: var(--text-main); }
+
+        .address-block a {
+            color: var(--amber);
+            font-weight: 600;
+            display: inline-block;
+            min-height: 44px;
+            line-height: 44px;
+            padding: 0 0.25rem;
         }
 
         /* Action Buttons */
@@ -224,17 +434,21 @@
 
         .phone-link {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 2rem;
+            font-size: clamp(1.6rem, 5vw, 2rem);
             color: #fff;
             text-decoration: none;
             font-weight: 700;
+            display: inline-block;
+            padding: 0.25rem 0;
         }
+
+        .phone-link:hover { color: var(--amber); }
 
         .funky-button {
             display: inline-block;
             background: var(--primary);
             color: #fff;
-            padding: 1rem 2.5rem;
+            padding: 1rem 2.25rem;
             border-radius: 100px;
             text-decoration: none;
             font-weight: 600;
@@ -242,6 +456,20 @@
             letter-spacing: 1px;
             transition: all 0.3s ease;
             box-shadow: 0 10px 20px -5px rgba(0, 71, 171, 0.4);
+            min-height: 44px;
+        }
+
+        .funky-button.call {
+            background: var(--accent);
+            box-shadow: 0 10px 20px -5px rgba(255, 69, 0, 0.5);
+        }
+
+        .funky-button.call:hover { background: #e63e00; }
+
+        .funky-button.ghost {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         .funky-button.messenger {
@@ -254,90 +482,163 @@
             box-shadow: 0 15px 30px -5px rgba(0, 132, 255, 0.6);
         }
 
+        .button-row {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-top: 1.5rem;
+        }
+
+        .tonight-card .button-row { margin-top: 1rem; }
+
+        /* Past / archive tag */
+        .archive-tag {
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--text-dim);
+            border: 1px solid var(--border-glass);
+            padding: 3px 10px;
+            border-radius: 6px;
+            display: inline-block;
+            margin-bottom: 0.75rem;
+        }
+
         /* Footer */
         footer {
             text-align: center;
-            padding: 5rem 1rem;
+            padding: 3.5rem 1rem 5rem;
             border-top: 1px solid var(--border-glass);
             margin-top: 50px;
+            color: var(--text-dim);
         }
 
-        footer p {
-            font-size: 0.9rem;
-        }
+        footer p { font-size: 0.95rem; }
+
+        footer a { color: var(--amber); text-decoration: none; }
+        footer a:hover { text-decoration: underline; }
 
         /* Responsive Magic */
         @media (max-width: 992px) {
+            header { background-attachment: scroll; } /* 'fixed' janks/fails on iOS */
             main {
                 grid-template-columns: 1fr;
-                margin-top: -50px;
+                margin-top: -40px;
             }
-            .about-section, .hours-section, .contact-section { grid-column: span 1; }
-            .contact-section { flex-direction: column; text-align: center; gap: 20px; }
-            h1 { font-size: 3.5rem; }
+            /* .tonight-card MUST be reset too — leaving it at span 3 against a
+               single-column template makes the grid invent 2 implicit columns
+               and squeezes every card into a sliver. */
+            .tonight-card, .about-section, .whatson-section, .hours-section, .contact-section {
+                grid-column: span 1;
+                grid-row: auto;
+            }
+            .contact-section { flex-direction: column; text-align: center; align-items: center; }
+            .hours-item { font-size: 0.95rem; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .blob { animation: none; }
+            section { transition: none; }
+            html { scroll-behavior: auto; }
         }
 
         /* Smooth Scroll */
         html {
             scroll-behavior: smooth;
+            scroll-padding-top: 84px; /* keep #anchors clear of the fixed top bar */
         }
 
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: var(--bg-dark);
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: var(--primary);
-            border-radius: 10px;
-        }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--bg-dark); }
+        ::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 10px; }
     </style>
 </head>
 <body>
+
+    <nav class="topbar" aria-label="Site">
+        <div class="topbar-inner">
+            <a class="topbar-brand" href="#top">
+                <span class="brand-full">Upper Horton Sports Club</span><span class="brand-short">UHSC</span>
+            </a>
+            <div class="topbar-links">
+                <a href="events.html">What's On</a>
+                <a href="#find" class="hide-sm">Find Us</a>
+                <a href="tel:0267827249" class="topbar-call">📞 (02) 6782 7249</a>
+            </div>
+        </div>
+    </nav>
 
     <div class="blob-bg">
         <div class="blob blob-1"></div>
         <div class="blob blob-2"></div>
     </div>
 
-    <header>
+    <header id="top">
         <div class="hero-content">
             <h1>Upper Horton<br>Sports Club</h1>
             <p class="hero-tagline">The heart of our community.</p>
-            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-                <a href="#explore" class="funky-button">Explore The Club</a>
-                <a href="meatfest.html" class="funky-button" style="background: var(--accent); box-shadow: 0 10px 20px -5px rgba(255, 69, 0, 0.45);">🔥 Meat Fest ($15 Feast)</a>
-                <a href="events.html" class="funky-button" style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.2);">Upcoming Events</a>
+            <div class="hero-buttons">
+                <a href="tel:0267827249" class="funky-button call">📞 Call (02) 6782 7249</a>
+                <a href="events.html" class="funky-button ghost">What's On</a>
+                <a href="#find" class="funky-button ghost">Find Us</a>
             </div>
         </div>
     </header>
 
-    <main id="explore">
-        <!-- Featured Event: Meat Fest 2026 -->
-        <section class="meatfest-card" style="background: linear-gradient(135deg, rgba(255, 69, 0, 0.12) 0%, rgba(255, 255, 255, 0.05) 100%); border: 1px solid rgba(255, 69, 0, 0.35);">
-            <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 12px; margin-bottom: 1.25rem;">
-                <span class="meal-badge" style="font-size: 0.85rem; padding: 4px 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;">
-                    Featured Event • Saturday, 26th September 2026
-                </span>
-                <span style="font-size: 0.85rem; color: #ff7849; font-weight: 700; border: 1px solid rgba(255, 69, 0, 0.4); padding: 4px 10px; border-radius: 6px; background: rgba(255, 69, 0, 0.1);">
-                    🔥 Smoker Spots 100% Sold Out
-                </span>
+    <main>
+        <!-- Utility first: are we open, what's on tonight -->
+        <section class="tonight-card" id="tonight" aria-live="polite">
+            <div class="status-line">
+                <span class="status-dot" id="status-dot" aria-hidden="true"></span>
+                <span class="status-headline" id="status-headline">Tonight at the Club</span>
             </div>
-            <h2 style="font-size: clamp(1.8rem, 4vw, 2.5rem); margin-bottom: 0.75rem;">Meat Fest 2026: The $15 Low & Slow Feast</h2>
-            <p style="font-size: 1.15rem; color: #f8f9fa; max-width: 900px; margin-bottom: 1.5rem;">
-                All pitmaster stations are officially sold out and the smokers will be roaring! Come down to Upper Horton Sports Club for an unforgettable, cheap, and fun <strong>$15 barbecue dinner</strong> piled high with competition smoked pork, beef brisket, and hot club roasted vegetables. Club Can Bar running all day, blind judging spectacles at 3 PM and 5 PM, awards at 6:30 PM, plus camping on site.
+            <p class="status-sub" id="status-sub">Open Wednesday to Sunday. Meals Friday nights, Sunday lunch and Sunday pizzas.</p>
+            <div class="button-row">
+                <a href="tel:0267827249" class="funky-button call">Call to book a table</a>
+                <a href="events.html" class="funky-button ghost">See what's on</a>
+            </div>
+        </section>
+
+        <section class="hours-section">
+            <h2>When we're open</h2>
+            <div class="hours-list">
+                <div class="hours-item" data-day="3">
+                    <span class="day-label">Wednesday</span>
+                    <span class="time-label">Open from 5:00 PM</span>
+                </div>
+                <div class="hours-item" data-day="4">
+                    <span class="day-label">Thursday</span>
+                    <span class="time-label">Open from 5:00 PM</span>
+                </div>
+                <div class="hours-item" data-day="5">
+                    <span class="day-label">Friday</span>
+                    <span class="time-label">Open from 5:00 PM <span class="meal-badge">Meals</span></span>
+                </div>
+                <div class="hours-item" data-day="6">
+                    <span class="day-label">Saturday</span>
+                    <span class="time-label">Open from 5:00 PM</span>
+                </div>
+                <div class="hours-item" data-day="0">
+                    <span class="day-label">Sunday</span>
+                    <span class="time-label">Open from 12:00 PM <span class="meal-badge">Meals</span></span>
+                </div>
+                <div class="hours-item" data-day="1">
+                    <span class="day-label">Monday</span>
+                    <span class="time-label"><span class="closed">Closed</span></span>
+                </div>
+                <div class="hours-item" data-day="2">
+                    <span class="day-label">Tuesday</span>
+                    <span class="time-label"><span class="closed">Closed</span></span>
+                </div>
+            </div>
+            <p class="hours-note">
+                <strong>There's no set closing time</strong> — we stay open while there's a crowd, so how late we run
+                depends on patronage. Opening shifts 30 minutes with daylight saving (5:30 PM in summer, 5:00 PM in winter).
+                Sunday meals: lunch 12:00–2:00 PM, pizzas from 5:00 PM.
+                Planning a special trip? <a href="tel:0267827249">Ring us on (02) 6782 7249</a>.
             </p>
-            <div style="display: flex; gap: 1rem; align-items: center; flex-wrap: wrap;">
-                <a href="meatfest.html" class="funky-button" style="background: var(--accent); box-shadow: 0 10px 20px -5px rgba(255, 69, 0, 0.5);">
-                    Explore The Feast & Reserve Plates ($15) →
-                </a>
-                <a href="meatfest.html#schedule" class="funky-button" style="background: rgba(255, 255, 255, 0.1); border: 1px solid var(--border-glass);">
-                    View Turn-in Schedule
-                </a>
-            </div>
         </section>
 
         <section class="about-section">
@@ -347,58 +648,117 @@
             <p>More than a club. We're a family.</p>
         </section>
 
-        <section class="hours-section">
-            <h2>When we're open</h2>
-            <p style="font-size: 0.9rem; font-style: italic; margin-bottom: 0.5rem;">* Subject to patronage</p>
-            <p style="font-size: 0.85rem; color: var(--accent); margin-bottom: 1.5rem; font-weight: 600;">
-                Note: We open at 5:30 PM during Daylight Saving, and 5:00 PM during Standard Time.
-            </p>
-            <div class="hours-list">
-                <div class="hours-item">
-                    <span class="day-label">Wed / Thu</span>
-                    <span class="time-label">5:00 PM / 5:30 PM* — 9:00 PM</span>
-                </div>
-                <div class="hours-item">
-                    <span class="day-label">Friday</span>
-                    <span class="time-label">5:00 PM / 5:30 PM* — 11:00 PM <span class="meal-badge">Meals</span></span>
-                </div>
-                <div class="hours-item">
-                    <span class="day-label">Saturday</span>
-                    <span class="time-label">5:00 PM / 5:30 PM* — 11:00 PM</span>
-                </div>
-                <div class="hours-item">
-                    <span class="day-label">Sunday</span>
-                    <span class="time-label">Open from 12:00 PM</span>
-                </div>
-                <div class="hours-item">
-                    <span class="day-label">Sunday Lunch</span>
-                    <span class="time-label">12:00 PM — 2:00 PM <span class="meal-badge">Meals</span></span>
-                </div>
-                <div class="hours-item">
-                    <span class="day-label">Sunday Pizza</span>
-                    <span class="time-label">5:00 PM / 5:30 PM* — 9:00 PM <span class="meal-badge">Meals</span></span>
-                </div>
+        <section class="whatson-section">
+            <h2>What's on</h2>
+            <p><strong>Friday nights:</strong> meals plus the Friday night raffle trays. <strong>Sunday:</strong> lunch from 12, pizzas from 5. The bar is open Wednesday to Sunday.</p>
+            <p>On the calendar each year: <strong>Footy Tips</strong> (starts March) and the <strong>Family Motorbike Weekend</strong> (May). Meat Fest 2026 was held on Saturday 26 September and sold out — a big thank you to every pitmaster and diner who came along.</p>
+            <div class="button-row">
+                <a href="events.html" class="funky-button">See all events</a>
+                <a href="meatfest.html" class="funky-button ghost">Meat Fest 2026 (archive)</a>
             </div>
-            <p style="font-size: 0.75rem; margin-top: 1rem; color: var(--text-dim);">*5:30 PM during Daylight Saving Time</p>
         </section>
 
-        <section class="contact-section">
+        <section class="contact-section" id="find">
             <div>
-                <h2>Get in touch</h2>
-                <p>Book a table or inquire about our next big event.</p>
+                <h2>Find us &amp; get in touch</h2>
+                <address class="address-block">
+                    <strong>Upper Horton Sports Club</strong><br>
+                    22 Cobbadah Street<br>
+                    Upper Horton NSW 2347<br>
+                    <a href="https://www.google.com/maps/search/?api=1&amp;query=Upper%20Horton%20Sports%20Club%2022%20Cobbadah%20St%20Upper%20Horton%20NSW%202347" target="_blank" rel="noopener">Get directions →</a>
+                </address>
                 <a href="tel:0267827249" class="phone-link">(02) 6782 7249</a>
             </div>
             <div class="cta-group">
-                <a href="tel:0267827249" class="funky-button">Call Now</a>
-                <a href="https://m.me/UpperHortonSportsClub" target="_blank" class="funky-button messenger">Message Us</a>
+                <a href="tel:0267827249" class="funky-button call">Call Now</a>
+                <a href="https://m.me/UpperHortonSportsClub" target="_blank" rel="noopener" class="funky-button messenger">Message Us</a>
+                <a href="https://www.facebook.com/UpperHortonSportsClub" target="_blank" rel="noopener" class="funky-button ghost">Facebook Page</a>
             </div>
         </section>
     </main>
 
     <footer>
+        <p>Upper Horton Sports Club · 22 Cobbadah Street, Upper Horton NSW 2347 · <a href="tel:0267827249">(02) 6782 7249</a></p>
+        <p>Bar open Wednesday to Sunday from 5:00 PM (Sunday from 12:00 PM). Meals Friday nights, Sunday lunch &amp; pizzas. Closing time depends on patronage.</p>
         <p>&copy; 2026 Upper Horton Sports Club. All rights reserved.</p>
-        <p>Crafted for the Community of Upper Horton.</p>
     </footer>
+
+    <script>
+        // Work out what's actually on tonight, in CLUB time (Australia/Sydney),
+        // so a visitor doesn't have to reason about daylight saving themselves.
+        (function () {
+            var TZ = 'Australia/Sydney';
+            var now = new Date();
+
+            var parts = new Intl.DateTimeFormat('en-AU', {
+                timeZone: TZ, weekday: 'short', year: 'numeric',
+                month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit', hour12: false
+            }).formatToParts(now).reduce(function (o, p) { o[p.type] = p.value; return o; }, {});
+
+            var dayMap = { Sun: 0, Mon: 1, Tue: 2, Wed: 3, Thu: 4, Fri: 5, Sat: 6 };
+            var day = dayMap[parts.weekday];
+            var hour = parseInt(parts.hour, 10) % 24;
+            var mins = parseInt(parts.minute, 10);
+            var nowMins = hour * 60 + mins;
+            var y = parseInt(parts.year, 10), mo = parseInt(parts.month, 10), d = parseInt(parts.day, 10);
+
+            // NSW daylight saving: first Sunday in October -> first Sunday in April
+            function firstSunday(year, month) {
+                var x = new Date(Date.UTC(year, month - 1, 1));
+                var first = 1 + ((7 - x.getUTCDay()) % 7);
+                return new Date(year, month - 1, first);
+            }
+            var dstStart = firstSunday(y, 10);
+            var dstEnd = firstSunday(y, 4);
+            var today = new Date(y, mo - 1, d);
+            var isDST = today >= dstStart || today < dstEnd;
+
+            function t(h, m) { return h * 60 + (m || 0); }
+            var openPM = isDST ? t(17, 30) : t(17, 0);
+
+            // NOTE: there is deliberately no closing time in this table — the club
+            // stays open while there's a crowd, so closing depends on patronage.
+            var sched = {
+                0: { open: t(12, 0), label: 'Sunday', meals: 'Sunday lunch 12–2 PM and pizzas from 5 PM' },
+                3: { open: openPM,   label: 'Wednesday' },
+                4: { open: openPM,   label: 'Thursday' },
+                5: { open: openPM,   label: 'Friday', meals: 'Friday night meals and the raffle' },
+                6: { open: openPM,   label: 'Saturday' }
+            };
+
+            function fmt(m) {
+                var h = Math.floor(m / 60), mm = m % 60;
+                var ampm = h >= 12 ? 'PM' : 'AM';
+                var h12 = h % 12; if (h12 === 0) h12 = 12;
+                return h12 + ':' + (mm < 10 ? '0' + mm : mm) + ' ' + ampm;
+            }
+
+            var dot = document.getElementById('status-dot');
+            var head = document.getElementById('status-headline');
+            var sub = document.getElementById('status-sub');
+            var s = sched[day];
+
+            var patronage = 'Closing time depends on patronage — we stay open while there\'s a crowd.';
+
+            if (!s) {
+                dot.className = 'status-dot closed';
+                head.textContent = 'Closed today';
+                sub.textContent = 'We are open Wednesday to Sunday and closed Mondays and Tuesdays. We open again Wednesday from ' + fmt(openPM) + ' — give us a call to book a table.';
+            } else if (nowMins < s.open) {
+                dot.className = 'status-dot closed';
+                head.textContent = 'Opens ' + (s.open < t(17, 0) ? 'today' : 'tonight') + ' at ' + fmt(s.open);
+                sub.textContent = (s.meals ? s.label + ': ' + s.meals + '. ' : '') + patronage;
+            } else {
+                dot.className = 'status-dot open';
+                head.textContent = 'Open now';
+                sub.textContent = (s.meals ? s.label + ': ' + s.meals + '. ' : '') + patronage;
+            }
+
+            // Highlight today's row in the hours list
+            var row = document.querySelector('.hours-item[data-day="' + day + '"]');
+            if (row) { row.classList.add('today'); }
+        })();
+    </script>
 
 </body>
 </html>

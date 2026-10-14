@@ -1,22 +1,12 @@
 theme: jekyll-theme-cayman
 
-title: My Cayman-themed Jekyll Website
-description: A place to showcase my projects and ideas.
+title: Upper Horton Sports Club
+description: Community sports club and bar in the Horton Valley — open Wednesday to Sunday, meals Friday nights and Sundays. 22 Cobbadah Street, Upper Horton NSW 2347.
 author:
-  name: Your Name
-  email: your@email.com
+  name: Upper Horton Sports Club
+  # No public club email — phone (02) 6782 7249 and Facebook Messenger are the contact channels.
 
-plugins:
-  - jekyll-feed
-
-defaults:
-  - scope:
-      path: ""
-      type: "posts"
-    values:
-      layout: "post"
-
-collections:
-  projects:
-    output: true
-    permalink: /projects/:title/
+# This site is hand-written static HTML (index.html, events.html, meatfest.html, rules.html).
+# Those files have no front matter, so Jekyll serves them verbatim — no collections or
+# post layouts are needed.
+plugins: []

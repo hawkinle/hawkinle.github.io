@@ -11,12 +11,23 @@
     <meta name="author" content="Upper Horton Sports Club">
     <meta name="robots" content="index, follow">
 
+    <link rel="canonical" href="https://upperhortonsportsclub.com.au/meatfest.html">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <meta name="theme-color" content="#0a0e14">
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://upperhortonsportsclub.com.au/">
-    <meta property="og:title" content="Meat Fest 2026 | The $15 Low & Slow Feast">
-    <meta property="og:description" content="Smoking spots sold out! Join us Saturday 26th September for an epic $15 low-and-slow BBQ plate featuring competition pork, beef brisket, and hot roast veg.">
-    <meta property="og:image" content="images/social_promo_post.jpg">
+    <meta property="og:site_name" content="Upper Horton Sports Club">
+    <meta property="og:url" content="https://upperhortonsportsclub.com.au/meatfest.html">
+    <meta property="og:title" content="Meat Fest 2026 | The $15 Low &amp; Slow Feast | Upper Horton Sports Club">
+    <meta property="og:description" content="Meat Fest 2026 was held on Saturday 26 September 2026 — a sold-out $15 low-and-slow feast. This is the event archive, plus registration of interest for 2027.">
+    <meta property="og:image" content="https://upperhortonsportsclub.com.au/images/social_promo_post.jpg">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Meat Fest 2026 | Upper Horton Sports Club">
+    <meta name="twitter:description" content="Held Saturday 26 September 2026 — a sold-out $15 low-and-slow feast.">
+    <meta name="twitter:image" content="https://upperhortonsportsclub.com.au/images/social_promo_post.jpg">
 
     <!-- Modern Typography: Space Grotesk for Headings, Outfit for Body (Upper Horton Sports Club Standard) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -614,86 +625,6 @@
             font-size: 0.95rem;
         }
 
-        /* Reservation Form Styles */
-        .reservation-card {
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.07) 0%, rgba(255, 255, 255, 0.02) 100%);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-        }
-
-        .form-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1.25rem;
-            margin-top: 1.5rem;
-        }
-
-        .form-group {
-            display: flex;
-            flex-direction: column;
-            gap: 0.4rem;
-        }
-
-        .form-group.full-width {
-            grid-column: span 2;
-        }
-
-        label {
-            font-size: 0.88rem;
-            font-weight: 600;
-            color: #e9ecef;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        input, select, textarea {
-            width: 100%;
-            background: rgba(10, 14, 20, 0.75);
-            border: 1px solid var(--border-glass);
-            border-radius: 12px;
-            padding: 0.85rem 1rem;
-            color: #fff;
-            font-family: 'Outfit', sans-serif;
-            font-size: 1rem;
-            transition: all 0.25s ease;
-        }
-
-        input:focus, select:focus, textarea:focus {
-            outline: none;
-            border-color: var(--accent);
-            box-shadow: 0 0 0 3px rgba(255, 69, 0, 0.2);
-            background: rgba(10, 14, 20, 0.95);
-        }
-
-        select option {
-            background: #0a0e14;
-            color: #fff;
-        }
-
-        /* Success Message Container */
-        .success-box {
-            display: none;
-            text-align: center;
-            padding: 3rem 1.5rem;
-        }
-
-        .success-box.show {
-            display: block;
-        }
-
-        .success-icon {
-            width: 68px;
-            height: 68px;
-            border-radius: 50%;
-            background: rgba(16, 185, 129, 0.15);
-            border: 2px solid #10b981;
-            color: #10b981;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1.5rem;
-            font-size: 2rem;
-        }
-
         /* Rules Accordion / Card */
         .rules-grid {
             display: grid;
@@ -800,12 +731,6 @@
             .col-span-1, .col-span-2, .col-span-3 {
                 grid-column: span 1;
             }
-            .form-grid {
-                grid-template-columns: 1fr;
-            }
-            .form-group.full-width {
-                grid-column: span 1;
-            }
             .rules-grid {
                 grid-template-columns: 1fr;
             }
@@ -842,6 +767,12 @@
 </head>
 <body>
 
+    <!-- Past-event notice -->
+    <div role="note" style="background: linear-gradient(90deg, rgba(255,69,0,0.95), rgba(255,69,0,0.72)); color: #fff; font-weight: 600; font-size: 0.95rem; text-align: center; padding: 0.75rem 1rem; line-height: 1.5;">
+        🎉 Meat Fest 2026 was held on <strong>Saturday 26 September 2026</strong> and was a complete sell-out. This page is the event archive.
+        <a href="index.html#find" style="color: #fff; text-decoration: underline; white-space: nowrap;">Get in touch about Meat Fest 2027 &rarr;</a>
+    </div>
+
     <!-- Ambient Glowing Blobs -->
     <div class="blob-bg">
         <div class="blob blob-1"></div>
@@ -873,7 +804,7 @@
             </ul>
 
             <div class="nav-cta">
-                <a href="#reserve" class="btn-pill btn-accent">Reserve $15 Plate</a>
+                <a href="index.html#find" class="btn-pill btn-accent">Event held &middot; Contact club</a>
             </div>
 
             <!-- Mobile Toggle -->
@@ -890,7 +821,7 @@
             <a href="#rules" class="nav-link">Judging & Rules</a>
             <a href="#camping" class="nav-link">Camping</a>
             <a href="events.html" class="nav-link">Upcoming Club Events</a>
-            <a href="#reserve" class="btn-pill btn-accent" style="width: 100%; margin-top: 0.5rem;">Reserve $15 Meal</a>
+            <a href="index.html#find" class="btn-pill btn-accent" style="width: 100%; margin-top: 0.5rem;">Event held &middot; Contact club</a>
         </div>
     </nav>
 
@@ -910,7 +841,7 @@
             </h1>
 
             <p class="hero-tagline">
-                All competition pits are filled and locked in. Now it's time to eat! Join us at the Upper Horton Sports Club for an unforgettable, fun, and cheap <strong>$15 low-and-slow barbecue dinner</strong> loaded with competition-smoked pork, beef brisket, and hot roasted vegetables.
+                Meat Fest 2026 was held on Saturday 26 September 2026 and sold out. Have a look back at the day — a <strong>$15 low-and-slow barbecue feast</strong> loaded with competition-smoked pork, beef brisket, and hot roasted vegetables — and register your interest for Meat Fest 2027.
             </p>
 
             <!-- Key Event Meta Badges -->
@@ -938,8 +869,8 @@
 
             <!-- Hero Action Buttons -->
             <div class="hero-actions">
-                <a href="#reserve" class="btn-pill btn-accent">Reserve Your $15 Plate</a>
-                <a href="#the-feast" class="btn-pill btn-glass">Explore Feast & Schedule</a>
+                <a href="#contact-feast" class="btn-pill btn-accent">Meat Fest 2027 &mdash; get in touch</a>
+                <a href="#the-feast" class="btn-pill btn-glass">Explore Feast &amp; Schedule</a>
             </div>
         </div>
     </header>
@@ -980,7 +911,7 @@
                     <div class="price-number"><span>$</span>15</div>
                     <div class="price-desc">
                         <strong>Per Plate — Open to All!</strong><br>
-                        Entry to the club grounds is free. Please RSVP below so our cooks and kitchen have an accurate headcount. Plates are payable at the venue on the night.
+                        Entry to the club grounds was free. Plates were payable at the venue on the night.
                     </div>
                 </div>
             </section>
@@ -1120,7 +1051,7 @@
                 </div>
 
                 <div style="display: flex; flex-direction: column; gap: 0.75rem; margin-top: 2rem;">
-                    <a href="https://www.google.com/maps/search/?api=1&query=Upper+Horton+Sports+Club" target="_blank" class="btn-pill btn-glass" style="width: 100%;">
+                    <a href="https://www.google.com/maps/search/?api=1&amp;query=Upper%20Horton%20Sports%20Club%2022%20Cobbadah%20St%20Upper%20Horton%20NSW%202347" target="_blank" rel="noopener" class="btn-pill btn-glass" style="width: 100%;">
                         Open in Google Maps
                     </a>
                     <a href="https://m.me/UpperHortonSportsClub" target="_blank" class="btn-pill" style="width: 100%; background: #0084FF; box-shadow: 0 8px 20px -4px rgba(0, 132, 255, 0.4);">
@@ -1129,83 +1060,22 @@
                 </div>
             </section>
 
-            <!-- Card 6: Reservation / RSVP Form (Span 2) -->
-            <section class="card col-span-2 reservation-card" id="reserve">
-                <span class="feast-banner-badge">Reserve Your Plate</span>
-                <h2>RSVP for the $15 Feast</h2>
+            <!-- Card 6: Meat Fest 2027 — contact only.
+                 The 2026 reservation form has been removed; 2027 registration will be rebuilt. -->
+            <section class="card col-span-2" id="contact-feast">
+                <span class="feast-banner-badge">Meat Fest 2027</span>
+                <h2>Meat Fest 2027</h2>
                 <p>
-                    Admission to the club grounds is free for all attendees. Please reserve your $15 meal plates below so the club kitchen and pitmasters can ensure generous portions of meat and roasted vegetables for everyone!
+                    Meat Fest 2026 was held on Saturday 26 September and was a complete sell-out — thank you to every
+                    pitmaster and diner. Details for the 2027 event will be published here once they are confirmed.
                 </p>
-
-                <!-- Form -->
-                <form id="feast-rsvp-form">
-                    <div class="form-grid">
-                        <div class="form-group">
-                            <label for="full-name">Full Name *</label>
-                            <input type="text" id="full-name" required placeholder="e.g. Sarah Jenkins">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="email">Email Address *</label>
-                            <input type="email" id="email" required placeholder="sarah@example.com">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="phone">Phone Number *</label>
-                            <input type="tel" id="phone" required placeholder="0400 000 000">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="meal-count">Number of $15 Feast Plates *</label>
-                            <select id="meal-count" required>
-                                <option value="1">1 Meal Plate ($15)</option>
-                                <option value="2">2 Meal Plates ($30)</option>
-                                <option value="3">3 Meal Plates ($45)</option>
-                                <option value="4">4 Meal Plates ($60)</option>
-                                <option value="5">5 Meal Plates ($75)</option>
-                                <option value="6+">6+ Meal Plates</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group full-width">
-                            <label for="camping-pref">Camping on Site? (Payable on arrival)</label>
-                            <select id="camping-pref" required>
-                                <option value="No camping">No, attending for the day/evening only</option>
-                                <option value="Friday Night Unpowered ($10)">Friday Night — Unpowered ($10)</option>
-                                <option value="Friday Night Powered ($20)">Friday Night — Powered ($20)</option>
-                                <option value="Saturday Night Unpowered ($10)">Saturday Night — Unpowered ($10)</option>
-                                <option value="Saturday Night Powered ($20)">Saturday Night — Powered ($20)</option>
-                                <option value="Both Nights Unpowered ($20)">Both Nights — Unpowered ($20 total)</option>
-                                <option value="Both Nights Powered ($40)">Both Nights — Powered ($40 total)</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group full-width">
-                            <label for="special-notes">Special Dietary Notes or Questions (Optional)</label>
-                            <input type="text" id="special-notes" placeholder="e.g. Gluten sensitive, arriving with caravan at 4pm">
-                        </div>
-                    </div>
-
-                    <div style="margin-top: 1.75rem;">
-                        <button type="submit" id="submit-rsvp-btn" class="btn-pill btn-accent" style="width: 100%; padding: 1.1rem; font-size: 1rem;">
-                            CONFIRM $15 MEAL RESERVATION
-                        </button>
-                        <p style="text-align: center; font-size: 0.85rem; color: var(--text-dim); margin-top: 0.75rem;">
-                            🔒 Payment is collected at the door/bar upon arrival. No credit card required now.
-                        </p>
-                    </div>
-                </form>
-
-                <!-- Success Box -->
-                <div class="success-box" id="rsvp-success">
-                    <div class="success-icon">✓</div>
-                    <h3 style="font-size: 2rem; margin-bottom: 0.5rem;">You're on the Guestlist!</h3>
-                    <p style="max-width: 500px; margin: 0 auto 1.5rem; color: #f8f9fa;">
-                        Thank you! Your $15 feast plates have been recorded for <strong>Saturday, 26th September 2026</strong> at Upper Horton Sports Club. We look forward to seeing you for a fantastic evening of barbecue and cold drinks.
-                    </p>
-                    <button type="button" id="reset-form-btn" class="btn-pill btn-glass" style="font-size: 0.85rem;">
-                        Submit Another Reservation
-                    </button>
+                <p style="font-size: 0.95rem;">
+                    Want to know when the date is locked in, or thinking about putting a team in? Give the club a call or
+                    send us a message.
+                </p>
+                <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: 1.5rem;">
+                    <a href="tel:0267827249" class="btn-pill btn-accent">📞 Call (02) 6782 7249</a>
+                    <a href="https://m.me/UpperHortonSportsClub" target="_blank" rel="noopener" class="btn-pill btn-glass">Message the club</a>
                 </div>
             </section>
 
@@ -1235,7 +1105,7 @@
                 </div>
 
                 <div style="margin-top: 1.25rem; text-align: center;">
-                    <a href="australian_barbecue_rules.md" target="_blank" style="color: var(--accent); font-size: 0.88rem; text-decoration: none; font-weight: 600;">
+                    <a href="rules.html" style="color: var(--accent); font-size: 0.88rem; text-decoration: none; font-weight: 600;">
                         Read Full Official Competition Rules →
                     </a>
                 </div>
@@ -1256,7 +1126,7 @@
         <div class="footer-links">
             <a href="index.html">Club Homepage</a>
             <a href="events.html">Upcoming Events</a>
-            <a href="australian_barbecue_rules.md">Official BBQ Rules</a>
+            <a href="rules.html">Official BBQ Rules</a>
             <a href="tel:0267827249">(02) 6782 7249</a>
             <a href="https://m.me/UpperHortonSportsClub" target="_blank">Messenger</a>
         </div>
@@ -1284,74 +1154,9 @@
             });
         });
 
-        // RSVP Form Submission
-        const rsvpForm = document.getElementById('feast-rsvp-form');
-        const rsvpSuccess = document.getElementById('rsvp-success');
-        const resetBtn = document.getElementById('reset-form-btn');
-        const submitBtn = document.getElementById('submit-rsvp-btn');
-
-        // Existing Google Apps Script Endpoint
-        const GOOGLE_SHEET_URL = 'https://script.google.com/macros/s/AKfycbzyIy8NeT_yabntC3j7VcSJgOFIF8gMitEbJjDk3d9oDtlv0eywDg1JeQIguVREJjQz/exec';
-
-        rsvpForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-
-            const fullName = document.getElementById('full-name').value;
-            const email = document.getElementById('email').value;
-            const phone = document.getElementById('phone').value;
-            const mealCount = document.getElementById('meal-count').value;
-            const camping = document.getElementById('camping-pref').value;
-            const notes = document.getElementById('special-notes').value;
-
-            const payload = {
-                teamName: `RSVP Feast Diner: ${fullName}`,
-                pitmaster: fullName,
-                email: email,
-                phone: phone,
-                teamSize: mealCount,
-                extraTickets: mealCount,
-                categories: ['DINER_FEAST_RESERVATION', `$15_PLATES_${mealCount}`],
-                camping: `${camping} | Notes: ${notes}`
-            };
-
-            submitBtn.disabled = true;
-            submitBtn.textContent = 'RESERVING YOUR PLATES...';
-
-            if (!GOOGLE_SHEET_URL) {
-                rsvpForm.style.display = 'none';
-                rsvpSuccess.classList.add('show');
-                return;
-            }
-
-            fetch(GOOGLE_SHEET_URL, {
-                method: 'POST',
-                mode: 'no-cors',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(payload)
-            })
-            .then(() => {
-                rsvpForm.style.display = 'none';
-                rsvpSuccess.classList.add('show');
-            })
-            .catch((error) => {
-                console.error('Submission error:', error);
-                // Even on CORS catch, show success if payload was dispatched
-                rsvpForm.style.display = 'none';
-                rsvpSuccess.classList.add('show');
-            })
-            .finally(() => {
-                submitBtn.disabled = false;
-                submitBtn.textContent = 'CONFIRM $15 MEAL RESERVATION';
-            });
-        });
-
-        resetBtn.addEventListener('click', () => {
-            rsvpForm.reset();
-            rsvpSuccess.classList.remove('show');
-            rsvpForm.style.display = 'block';
-        });
+        // NOTE: the 2026 meal-reservation form and its Google Apps Script endpoint have been
+        // removed. Meat Fest 2027 registration will be rebuilt — do not re-add an endpoint here
+        // without replacing this comment.
     </script>
 </body>
 </html>

@@ -1,24 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Upcoming Events | Upper Horton Sports Club</title>
-    
+    <title>Events &amp; What's On | Upper Horton Sports Club</title>
+    <meta name="description" content="What's on at Upper Horton Sports Club — weekly raffles and meals, Footy Tips in March, the Family Motorbike Weekend in May, and the Meat Fest archive. 22 Cobbadah St, Upper Horton NSW. Ph (02) 6782 7249.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://upperhortonsportsclub.com.au/events.html">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <meta name="theme-color" content="#0a0e14">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Upper Horton Sports Club">
+    <meta property="og:url" content="https://upperhortonsportsclub.com.au/events.html">
+    <meta property="og:title" content="Events & What's On | Upper Horton Sports Club">
+    <meta property="og:description" content="Footy Tips, the Family Motorbike Weekend, weekly meals and raffles — what's on at Upper Horton Sports Club.">
+    <meta property="og:image" content="https://upperhortonsportsclub.com.au/images/banner.jpg">
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=Space+Grotesk:wght@500;700&display=swap"
+        rel="stylesheet">
 
     <style>
         :root {
             --primary: #0047AB;
             --accent: #FF4500;
+            --amber: #FFB347;
             --bg-dark: #0a0e14;
             --bg-glass: rgba(255, 255, 255, 0.05);
             --border-glass: rgba(255, 255, 255, 0.1);
             --text-main: #f8f9fa;
-            --text-dim: #adb5bd;
+            --text-dim: #c7cdd3;
         }
 
         body {
@@ -55,26 +72,55 @@
 
         .back-link:hover { color: #fff; }
 
+        .call-now {
+            background: var(--accent);
+            color: #fff;
+            text-decoration: none;
+            font-weight: 700;
+            padding: 0.6rem 1.25rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+
         header {
-            padding: 4rem 0;
+            padding: 3rem 0 2rem;
             text-align: center;
         }
 
         h1 {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: clamp(2.5rem, 8vw, 4rem);
+            font-size: clamp(2.25rem, 8vw, 4rem);
             margin: 0;
             text-transform: uppercase;
             letter-spacing: -1px;
-            background: linear-gradient(45deg, #fff, #888);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: #fff;
         }
+
+        .header-sub {
+            color: var(--text-dim);
+            font-size: 1.15rem;
+            margin-top: 0.75rem;
+        }
+
+        .weekly-note {
+            background: var(--bg-glass);
+            border: 1px solid var(--border-glass);
+            border-radius: 16px;
+            padding: 1.25rem 1.5rem;
+            color: var(--text-dim);
+            font-size: 1.05rem;
+            margin-bottom: 2rem;
+        }
+
+        .weekly-note strong { color: var(--text-main); }
 
         .events-grid {
             display: grid;
             gap: 1.5rem;
-            margin-top: 2rem;
+            margin-top: 1rem;
         }
 
         /* --- EVENT CARD --- */
@@ -92,8 +138,8 @@
 
         .event-card:hover {
             transform: scale(1.01);
-            border-color: rgba(255,255,255,0.2);
-            background: rgba(255,255,255,0.08);
+            border-color: rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.08);
         }
 
         .event-date {
@@ -121,9 +167,7 @@
             margin-top: 5px;
         }
 
-        .event-info {
-            flex-grow: 1;
-        }
+        .event-info { flex-grow: 1; }
 
         .event-info h2 {
             font-family: 'Space Grotesk', sans-serif;
@@ -138,6 +182,28 @@
             font-size: 1.1rem;
         }
 
+        /* Past / archive event treatment */
+        .event-card.past {
+            opacity: 0.82;
+            border-style: dashed;
+        }
+
+        .event-card.past .date-month { color: var(--text-dim); }
+
+        .tag {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 3px 10px;
+            border-radius: 4px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin: 0 6px 0.6rem 0;
+        }
+
+        .tag.accent { background: var(--accent); color: #fff; }
+        .tag.past { border: 1px solid var(--border-glass); color: var(--text-dim); }
+
         .btn {
             display: inline-block;
             background: var(--primary);
@@ -151,6 +217,7 @@
             text-transform: uppercase;
             letter-spacing: 1px;
             transition: all 0.3s ease;
+            min-height: 44px;
         }
 
         .btn:hover {
@@ -166,56 +233,56 @@
         }
 
         @media (max-width: 768px) {
-            .event-card { flex-direction: column; text-align: center; gap: 1.5rem; padding: 2rem; }
-            .event-date { border-right: none; border-bottom: 2px solid var(--accent); padding: 0 0 1rem 0; min-width: auto; width: 100%; }
+            .event-card {
+                flex-direction: column;
+                text-align: center;
+                gap: 1.5rem;
+                padding: 2rem;
+            }
+
+            .event-date {
+                border-right: none;
+                border-bottom: 2px solid var(--accent);
+                padding: 0 0 1rem 0;
+                min-width: auto;
+                width: 100%;
+            }
+
             .btn-secondary { margin-left: 0; }
         }
 
         footer {
             text-align: center;
-            padding: 5rem 0;
+            padding: 3.5rem 0;
             color: var(--text-dim);
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             border-top: 1px solid var(--border-glass);
             margin-top: 4rem;
         }
+
+        footer a { color: var(--amber); text-decoration: none; }
+        footer a:hover { text-decoration: underline; }
     </style>
 </head>
+
 <body>
 
     <div class="container">
         <nav>
             <a href="index.html" class="back-link">← Back to Home</a>
+            <a href="tel:0267827249" class="call-now">📞 (02) 6782 7249</a>
         </nav>
 
         <header>
-            <h1>Upcoming Events</h1>
-            <p>What's happening at the Club.</p>
+            <h1>What's On</h1>
+            <p class="header-sub">Events and goings-on at the Upper Horton Sports Club.</p>
         </header>
 
-        <div class="events-grid">
+        <p class="weekly-note">
+            <strong>Every week:</strong> the bar is open Wednesday to Sunday from 5:00 PM (Sunday from 12:00 PM), with meals on Friday nights (plus the Friday raffle trays), Sunday lunch from 12 and Sunday pizzas from 5. <strong>There's no set closing time</strong> — we stay open while there's a crowd, so how late we run depends on patronage.
+        </p>
 
-            <!-- EVENT: Meat Fest 2026 -->
-            <div class="event-card" style="border-color: rgba(255, 69, 0, 0.4); background: linear-gradient(135deg, rgba(255, 69, 0, 0.1) 0%, var(--bg-glass) 100%);">
-                <div class="event-date" style="border-color: var(--accent);">
-                    <span class="date-day">26</span>
-                    <span class="date-month">SEPTEMBER</span>
-                </div>
-                <div class="event-info">
-                    <div style="display: flex; gap: 8px; align-items: center; margin-bottom: 0.5rem; flex-wrap: wrap;">
-                        <span style="background: var(--accent); color: #fff; font-size: 0.75rem; font-weight: 700; padding: 2px 8px; border-radius: 4px; text-transform: uppercase;">The $15 Feast</span>
-                        <span style="border: 1px solid rgba(255, 69, 0, 0.4); color: #ff7849; font-size: 0.75rem; font-weight: 700; padding: 2px 8px; border-radius: 4px; text-transform: uppercase;">🔥 Smoker Spots Sold Out</span>
-                    </div>
-                    <h2>Meat Fest 2026: The $15 Low & Slow Feast</h2>
-                    <p>
-                        All pitmaster spots are officially sold out! Join us for an incredible, cheap, and fun low-and-slow barbecue dinner for just $15 per plate — loaded with competition smoked pork, beef brisket, and hot club roast vegetables. Can bar open from 12 PM, blind turn-in judging at 3 PM & 5 PM, awards at 6:30 PM followed by dinner service. Camping on-site ($10 unpowered / $20 powered per night).
-                    </p>
-                    <div style="display: flex; gap: 10px; flex-wrap: wrap; justify-content: flex-start; margin-top: 1.5rem;">
-                        <a href="meatfest.html" class="btn" style="background: var(--accent); box-shadow: 0 10px 20px -5px rgba(255, 69, 0, 0.4);">View Feast & Reserve ($15)</a>
-                        <a href="meatfest.html#schedule" class="btn btn-secondary">Timeline & Rules</a>
-                    </div>
-                </div>
-            </div>
+        <div class="events-grid">
 
             <!-- EVENT: Footy Tips -->
             <div class="event-card">
@@ -224,8 +291,10 @@
                     <span class="date-month">STARTING</span>
                 </div>
                 <div class="event-info">
+                    <span class="tag accent">Annual</span>
                     <h2>Footy Tips</h2>
-                    <p>$50 entry fee. You can join the competition by messaging us on Facebook or seeing us at the club in person!</p>
+                    <p>$50 entry fee. Join the competition by messaging us on Facebook or seeing us at the club in
+                        person.</p>
                     <a href="https://m.me/UpperHortonSportsClub" class="btn">Message Us to Join</a>
                 </div>
             </div>
@@ -237,11 +306,35 @@
                     <span class="date-month">LAST WEEKEND</span>
                 </div>
                 <div class="event-info">
+                    <span class="tag accent">Annual</span>
                     <h2>Family Motorbike Weekend</h2>
-                    <p>Get ready for our next Family Motorbike Weekend! Join us for a great weekend of riding and community. Details and registration can be found on our trail ride page.</p>
+                    <p>A great weekend of riding and community. Details and registration are on the trail ride
+                        page.</p>
                     <div style="display: flex; gap: 10px; flex-wrap: wrap; justify-content: flex-start;">
-                        <a href="https://www.facebook.com/Upperhortontrailride" target="_blank" class="btn">See Details Here</a>
+                        <a href="https://www.facebook.com/Upperhortontrailride" target="_blank" rel="noopener" class="btn">Trail
+                            Ride Details</a>
                         <a href="https://m.me/UpperHortonSportsClub" class="btn btn-secondary">Inquire</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- EVENT: Meat Fest 2026 (PAST) -->
+            <div class="event-card past">
+                <div class="event-date">
+                    <span class="date-day">26</span>
+                    <span class="date-month">SEPTEMBER</span>
+                </div>
+                <div class="event-info">
+                    <span class="tag past">Held — 2026</span>
+                    <h2>Meat Fest 2026: The $15 Low &amp; Slow Feast</h2>
+                    <p>
+                        A complete sell-out. Every pitmaster spot was taken and the club turned on a big $15
+                        low-and-slow dinner — competition smoked pork, beef brisket and hot roasted vegetables, with
+                        camping on site. Thanks to everyone who made it a great day.
+                    </p>
+                    <div style="display: flex; gap: 10px; flex-wrap: wrap; justify-content: flex-start;">
+                        <a href="meatfest.html" class="btn">View the 2026 archive</a>
+                        <a href="meatfest.html#contact-feast" class="btn btn-secondary">Get in touch about 2027</a>
                     </div>
                 </div>
             </div>
@@ -249,9 +342,12 @@
         </div>
 
         <footer>
+            <p>Upper Horton Sports Club · 22 Cobbadah Street, Upper Horton NSW 2347 · <a href="tel:0267827249">(02) 6782 7249</a></p>
+            <p>Bar open Wednesday to Sunday from 5:00 PM (Sunday from 12:00 PM). Closing time depends on patronage.</p>
             <p>&copy; 2026 Upper Horton Sports Club. All rights reserved.</p>
         </footer>
     </div>
 
 </body>
+
 </html>
