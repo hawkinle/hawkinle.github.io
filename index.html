@@ -70,6 +70,7 @@
             --primary: #0047AB; /* Electric Blue */
             --accent: #FF4500;  /* Vibrant Orange-Red */
             --amber: #FFB347;   /* High-contrast ink for hours/times */
+            --gold: #E8C46A;    /* Melbourne Cup / Calcutta accent */
             --bg-dark: #0a0e14;
             --bg-glass: rgba(255, 255, 255, 0.05);
             --border-glass: rgba(255, 255, 255, 0.1);
@@ -295,6 +296,61 @@
         }
 
         a { color: var(--amber); }
+
+        /* Small promo box for the next big day. Sits first in <main>, so with the grid's
+           negative top margin it lands in the hero's lower band. Keep it slim — the live
+           "tonight" status card below it is still the priority for a local. */
+        .hero-promo {
+            grid-column: span 3;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 0.4rem 0.9rem;
+            padding: 0.9rem 1.5rem;
+            border-radius: 18px;
+            text-decoration: none;
+            background: linear-gradient(135deg, rgba(232, 196, 106, 0.14) 0%, rgba(15, 19, 26, 0.92) 65%);
+            border: 1px solid rgba(232, 196, 106, 0.42);
+            transition: transform 0.25s ease, border-color 0.25s ease;
+        }
+
+        .hero-promo:hover {
+            transform: translateY(-2px);
+            border-color: rgba(232, 196, 106, 0.85);
+        }
+
+        .hero-promo-tag {
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--gold);
+            border: 1px solid rgba(232, 196, 106, 0.5);
+            padding: 2px 9px;
+            border-radius: 100px;
+            white-space: nowrap;
+        }
+
+        .hero-promo-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .hero-promo-when { color: var(--gold); font-weight: 600; font-size: 0.95rem; }
+
+        .hero-promo-cta {
+            margin-left: auto;
+            color: var(--gold);
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            white-space: nowrap;
+        }
+
+        .hero-promo-sub { flex: 1 1 100%; color: var(--text-dim); font-size: 0.92rem; }
 
         /* "Tonight at the Club" status strip */
         /* OPAQUE on purpose. As a translucent card it straddled the hero photo (its top
@@ -527,10 +583,10 @@
                 grid-template-columns: 1fr;
                 margin-top: -40px;
             }
-            /* .tonight-card MUST be reset too — leaving it at span 3 against a
-               single-column template makes the grid invent 2 implicit columns
-               and squeezes every card into a sliver. */
-            .tonight-card, .about-section, .whatson-section, .hours-section, .contact-section {
+            /* .tonight-card and .hero-promo MUST be reset too — leaving one at span 3
+               against a single-column template makes the grid invent 2 implicit columns
+               and squeezes every card into a sliver. Any new full-width card goes here. */
+            .hero-promo, .tonight-card, .about-section, .whatson-section, .hours-section, .contact-section {
                 grid-column: span 1;
                 grid-row: auto;
             }
@@ -588,6 +644,15 @@
     </header>
 
     <main>
+        <!-- Small hero promo for the next big day -->
+        <a class="hero-promo" href="calcutta.html">
+            <span class="hero-promo-tag">Next big day</span>
+            <span class="hero-promo-title">🏇 Melbourne Cup Calcutta</span>
+            <span class="hero-promo-when">Sunday 1 November</span>
+            <span class="hero-promo-cta">See the day &rarr;</span>
+            <span class="hero-promo-sub">Meals &amp; syndicate tickets from 12 · auction from about 3 PM · get your syndicates together</span>
+        </a>
+
         <!-- Utility first: are we open, what's on tonight -->
         <section class="tonight-card" id="tonight" aria-live="polite">
             <div class="status-line">
@@ -650,11 +715,12 @@
 
         <section class="whatson-section">
             <h2>What's on</h2>
+            <p><strong>Sunday 1 November:</strong> Melbourne Cup Calcutta — meals and syndicate tickets from 12, with the auction from about 3 PM. <a href="calcutta.html">Get your syndicates together &rarr;</a></p>
             <p><strong>Friday nights:</strong> meals plus the Friday night raffle trays. <strong>Sunday:</strong> lunch from 12, pizzas from 5. The bar is open Wednesday to Sunday.</p>
             <p>On the calendar each year: <strong>Footy Tips</strong> (starts March) and the <strong>Family Motorbike Weekend</strong> (May). Meat Fest 2026 was held on Saturday 26 September and sold out — a big thank you to every pitmaster and diner who came along.</p>
             <div class="button-row">
                 <a href="events.html" class="funky-button">See all events</a>
-                <a href="meatfest.html" class="funky-button ghost">Meat Fest 2026 (archive)</a>
+                <a href="calcutta.html" class="funky-button ghost">Melbourne Cup Calcutta</a>
             </div>
         </section>
 

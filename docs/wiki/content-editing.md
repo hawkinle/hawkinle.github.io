@@ -18,6 +18,9 @@ Always preview before pushing. See [getting-started.md](getting-started.md).
 | To change… | Edit |
 |---|---|
 | Opening hours, "tonight" behaviour | [`index.html`](../../index.html) — the hours list **and** the inline script **and** the JSON-LD block |
+| The "next big day" promo box | [`index.html`](../../index.html) — the `.hero-promo` block at the top of `<main>` |
+| The Calcutta event | [`calcutta.html`](../../calcutta.html) (the page) **and** the Calcutta card in [`events.html`](../../events.html) **and** the "What's on" card in [`index.html`](../../index.html) |
+| The social media graphics | the matching `.html` in [`social/`](../../social) — then re-render the PNG (see the README) |
 | Address, phone, Facebook/Messenger links | [`index.html`](../../index.html) contact card + footer; `events.html` and `rules.html` footers; `meatfest.html` nav/footer |
 | The weekly/what's-on wording | [`index.html`](../../index.html) "What's on" card and [`events.html`](../../events.html) |
 | Events | [`events.html`](../../events.html) |
@@ -48,16 +51,16 @@ out.
 Opening times *are* fixed and shift by 30 minutes with daylight saving (5:30 PM in summer,
 5:00 PM in winter; Sunday 12:00 PM). Check the DST logic matches the published times.
 
-### 2. `.tonight-card` must be reset inside the mobile media query
+### 2. Every full-width card must be reset inside the mobile media query
 
-`index.html` has `.tonight-card { grid-column: span 3; }` for the desktop bento grid. The
-`@media (max-width: 992px)` block sets `main { grid-template-columns: 1fr; }` **and** resets the
-spanning children to `span 1`.
+`index.html` has `.tonight-card { grid-column: span 3; }` and `.hero-promo { grid-column: span 3; }`
+for the desktop bento grid. The `@media (max-width: 992px)` block sets
+`main { grid-template-columns: 1fr; }` **and** resets those spanning children to `span 1`.
 
-If `.tonight-card` is left out of that reset list, a child spanning 3 columns against a
+If a full-width card is left out of that reset list, a child spanning 3 columns against a
 single-column template makes CSS Grid **invent two implicit columns**. The symptom is a
 homepage that renders as three skinny columns on a phone, with the body text squeezed into a
-~107px sliver. Any new full-width card you add must also be added to that reset list.
+~107px sliver. **Any new full-width card you add must also be added to that reset list.**
 
 ### 3. The hero uses `hero_banner.jpg`, not `banner.jpg`
 

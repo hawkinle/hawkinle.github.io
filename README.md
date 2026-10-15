@@ -9,8 +9,9 @@ Hand-written HTML — no framework, no build step. `git push` is the deploy.
 
 | File | Purpose |
 |---|---|
-| `index.html` | Homepage — live "open tonight" status, hours, what's on, address, contact |
-| `events.html` | What's On — weekly rhythm, annual events, Meat Fest archive |
+| `index.html` | Homepage — live "open tonight" status, promo for the next big day, hours, what's on, address, contact |
+| `calcutta.html` | Melbourne Cup Calcutta — Sunday 1 November 2026 event page (food, syndicates, how the day runs) |
+| `events.html` | What's On — weekly rhythm, upcoming events, annual events, Meat Fest archive |
 | `meatfest.html` | Meat Fest 2026 archive (held 26 Sep 2026, sold out) |
 | `rules.html` | Competition rules, rendered from `australian_barbecue_rules.md` |
 
@@ -32,6 +33,29 @@ Full wiki in **[`docs/wiki/`](docs/wiki/README.md)**:
 - [Editing the content](docs/wiki/content-editing.md) — how to change copy, **and the invariants not to break**
 - [Getting started](docs/wiki/getting-started.md) — preview, deploy, verify
 - [Sequence diagrams](docs/wiki/diagrams/sequences.md) — deploy and status flows
+
+## Social media images
+
+Ready-made Facebook/social graphics live in `social/`:
+
+| File | Size | Use |
+|---|---|---|
+| `social/calcutta-post-square.png` | 1080×1080 | Square feed post — the event announcement |
+| `social/calcutta-post-menu.png` | 1080×1080 | Square feed post — the food and prices |
+| `social/calcutta-landscape.png` | 1200×630 | Landscape — link posts and page headers |
+
+Each PNG is rendered from the matching `.html` in the same folder. To change the wording, edit
+the HTML and re-render:
+
+```bash
+cd social
+google-chrome --headless=new --no-sandbox --disable-gpu --hide-scrollbars \
+  --force-device-scale-factor=1 --window-size=1080,1080 --virtual-time-budget=8000 \
+  --screenshot=calcutta-post-square.png "file://$PWD/calcutta-square.html"
+```
+
+The render depends on Google Fonts loading, so keep the `--virtual-time-budget` or you will get a
+fallback font. Those HTML files are `noindex` and are not in the sitemap.
 
 ## Site rules worth knowing up front
 

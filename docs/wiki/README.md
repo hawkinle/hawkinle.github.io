@@ -44,8 +44,9 @@ three jobs, not above them.
 
 | File | Purpose |
 |---|---|
-| [`index.html`](../../index.html) | Homepage. Live "tonight" status, hours, what's on, address, contact. |
-| [`events.html`](../../events.html) | What's On — weekly rhythm, Footy Tips (March), Family Motorbike Weekend (May), Meat Fest archive. |
+| [`index.html`](../../index.html) | Homepage. Next-big-day promo, live "tonight" status, hours, what's on, address, contact. |
+| [`calcutta.html`](../../calcutta.html) | Melbourne Cup Calcutta — Sunday 1 November 2026. Food menu, syndicates, how the day runs. |
+| [`events.html`](../../events.html) | What's On — weekly rhythm, upcoming events, annual events, Meat Fest archive. |
 | [`meatfest.html`](../../meatfest.html) | Meat Fest 2026 **archive**. Held 26 Sep 2026, sold out. No registration form. |
 | [`rules.html`](../../rules.html) | Competition rules, rendered from [`australian_barbecue_rules.md`](../../australian_barbecue_rules.md). |
 | [`australian_barbecue_rules.md`](../../australian_barbecue_rules.md) | **Source of truth** for the rules. `rules.html` is a rendered copy. |
