@@ -20,7 +20,8 @@ Always preview before pushing. See [getting-started.md](getting-started.md).
 | Opening hours, "tonight" behaviour | [`index.html`](../../index.html) — the hours list **and** the inline script **and** the JSON-LD block |
 | The "next big day" promo box | [`index.html`](../../index.html) — the `.hero-promo` block at the top of `<main>` |
 | The Calcutta event | [`calcutta.html`](../../calcutta.html) (the page) **and** the Calcutta card in [`events.html`](../../events.html) **and** the "What's on" card in [`index.html`](../../index.html) |
-| The social media graphics | the matching `.html` in [`social/`](../../social) — then re-render the PNG (see the README) |
+| The food menu and prices | [`calcutta.html`](../../calcutta.html) "The food" section **and** the menu social graphic |
+| The social media graphics | the matching `.html` in [`social/`](../../social) — then re-render the PNG. See [social-graphics.md](social-graphics.md) |
 | Address, phone, Facebook/Messenger links | [`index.html`](../../index.html) contact card + footer; `events.html` and `rules.html` footers; `meatfest.html` nav/footer |
 | The weekly/what's-on wording | [`index.html`](../../index.html) "What's on" card and [`events.html`](../../events.html) |
 | Events | [`events.html`](../../events.html) |
@@ -101,13 +102,37 @@ old endpoint; if you add a form, read the "no-cors" note below first.
 > opaque response. The page could not tell success from failure and showed the success state
 > regardless — including if the endpoint was dead. Any replacement needs a real response check.
 
-### 7. `.md` files are not web pages
+### 7. An event lives in four places at once
+
+Calcutta is the worked example, and every event follows the same pattern. The event's date,
+times, meal info and link appear in:
+
+1. [`calcutta.html`](../../calcutta.html) — the page itself.
+2. [`index.html`](../../index.html) — the `.hero-promo` box at the top of `<main>` **and** the
+   "What's on" paragraph and its two buttons.
+3. [`events.html`](../../events.html) — the event's own `<h2>` card.
+4. The `social/` graphic that gets posted.
+
+Change one and you have broken the others. Grep for the event name before you call it done:
+
+```bash
+grep -rn "Calcutta" *.html
+```
+
+### 8. The rules page is a hand-rendered copy
+
+[`australian_barbecue_rules.md`](../../australian_barbecue_rules.md) is the **source of truth**.
+[`rules.html`](../../rules.html) is a hand-written HTML rendering of it — there is no build step
+and no script that keeps them in step. Edit the Markdown, then mirror the change into
+`rules.html` (headings become `<h2>`, the scoring table becomes a real `<table>`).
+
+### 9. `.md` files are not web pages
 
 `meatfest.html` used to link a raw `.md` file, which a browser renders as unstyled plain text.
 Rules are now served as `rules.html`. If you add a document, give it a styled HTML page; don't
 link the Markdown directly.
 
-### 8. Absolute URLs point at the custom domain
+### 10. Absolute URLs point at the custom domain
 
 Every `canonical`, `og:url` and `og:image` must use `https://upperhortonsportsclub.com.au/…`,
 never `hawkinle.github.io` and never a `github.com/…?raw=true` URL (social scrapers won't render

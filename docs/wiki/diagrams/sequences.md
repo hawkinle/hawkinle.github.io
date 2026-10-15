@@ -31,6 +31,43 @@ sequenceDiagram
    files through byte-for-byte.
 5. **Serve** — `CNAME` binds the custom domain; `hawkinle.github.io` redirects to it.
 
+A graphic change rides the same pipeline, with a local render step first — see the next workflow.
+
+## Workflow: Rendering a social graphic
+
+No server, no build tool. A hand-authored HTML template on disk is screenshotted by headless
+Chrome into a PNG, which is then committed alongside the template and posted to Facebook.
+
+```mermaid
+sequenceDiagram
+    participant Author
+    participant Template as "social/*.html"
+    participant Chrome as "headless Google Chrome"
+    participant Fonts as "Google Fonts CDN"
+    participant PNG as "social/*.png"
+    participant GitHub
+    Author->>Template: edit wording / prices
+    Author->>Chrome: --screenshot --window-size=W,H --virtual-time-budget=8000
+    Chrome->>Template: load (file:// URL)
+    Template->>Fonts: request Space Grotesk / Outfit
+    Fonts-->>Template: webfont files
+    Note over Chrome: budget keeps the shot waiting for the fonts
+    Chrome->>PNG: write at exactly WxH
+    Author->>PNG: eyeball the image
+    Author->>GitHub: commit template + PNG, push
+```
+
+### Walkthrough
+
+1. **Edit the template** — one of the files in [`../../../social/`](../../../social). Templates are
+   `noindex` and sized via `html, body { width; height; }`.
+2. **Screenshot** — `--window-size` must equal the CSS size, `--force-device-scale-factor=1` keeps
+   it 1:1, and `--virtual-time-budget=8000` is what stops you getting a fallback font.
+3. **Review the PNG** — it is going out as an image; nobody will re-read the HTML afterwards.
+4. **Commit both** — the template *and* the regenerated PNG, in one commit.
+
+Full flags and pitfalls: [../social-graphics.md](../social-graphics.md).
+
 ## Workflow: the "Tonight at the Club" status
 
 The only stateful code on the site. Runs once, on homepage load, in

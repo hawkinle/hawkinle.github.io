@@ -2,9 +2,9 @@
 
 Reference documentation for the club website at **https://upperhortonsportsclub.com.au**.
 
-This is a hand-written static site — four HTML pages, no build step, no framework. This wiki
-covers what each page is, how it is hosted and deployed, how to edit the content safely, and
-the specific traps that have already bitten this codebase.
+This is a hand-written static site — five HTML pages, no build step, no framework. This wiki
+covers what each page is, how it is hosted and deployed, how to edit the content safely, how the
+Facebook graphics are produced, and the specific traps that have already bitten this codebase.
 
 ---
 
@@ -31,7 +31,8 @@ three jobs, not above them.
 | Repo | `git@github.com:hawkinle/hawkinle.github.io.git` (branch `main`) |
 | Custom domain | declared in `CNAME` (`upperhortonsportsclub.com.au`) |
 | Build step | **none** — the HTML files are served as-is |
-| Pages | `index.html`, `events.html`, `meatfest.html`, `rules.html` |
+| Pages | `index.html`, `calcutta.html`, `events.html`, `meatfest.html`, `rules.html` |
+| Social graphics | `social/*.html` → headless-Chrome PNG. See [social-graphics.md](social-graphics.md) |
 | Address | 22 Cobbadah Street, Upper Horton NSW 2347 |
 | Phone | (02) 6782 7249 |
 | Facebook | https://www.facebook.com/UpperHortonSportsClub |
@@ -50,9 +51,17 @@ three jobs, not above them.
 | [`meatfest.html`](../../meatfest.html) | Meat Fest 2026 **archive**. Held 26 Sep 2026, sold out. No registration form. |
 | [`rules.html`](../../rules.html) | Competition rules, rendered from [`australian_barbecue_rules.md`](../../australian_barbecue_rules.md). |
 | [`australian_barbecue_rules.md`](../../australian_barbecue_rules.md) | **Source of truth** for the rules. `rules.html` is a rendered copy. |
-| [`favicon.svg`](../../favicon.svg) | "UH" monogram favicon. |
-| [`robots.txt`](../../robots.txt) / [`sitemap.xml`](../../sitemap.xml) | Search-engine plumbing. |
+| [`favicon.svg`](../../favicon.svg) | "UH" monogram favicon — dark tile, orange frame, white `UH`. |
+| [`social/`](../../social) | Facebook graphics: `noindex` HTML templates rendered to PNG. See [social-graphics.md](social-graphics.md). |
 | [`images/`](../../images) | Banner art. See the hero warning in [content-editing.md](content-editing.md). |
+| [`robots.txt`](../../robots.txt) / [`sitemap.xml`](../../sitemap.xml) | Search-engine plumbing. Any new public page must be added to the sitemap. |
+| [`CNAME`](../../CNAME) | Pins the custom domain. One line, no newline — don't let an editor add one. |
+| [`_config.yml`](../../_config.yml) | Jekyll config. Declares a theme no page uses; kept for tidiness. |
+| [`docs/wiki/`](.) | This wiki. **It is served publicly** — see the note below. |
+
+> **This wiki is publicly reachable.** GitHub Pages serves the whole repo, so these files are
+> live at `https://upperhortonsportsclub.com.au/docs/wiki/README.md` as raw Markdown. Nothing
+> secret belongs in here.
 
 ---
 
@@ -63,7 +72,9 @@ three jobs, not above them.
 - **[content-editing.md](content-editing.md)** — how to change copy, hours, events and prices,
   plus the invariants you must not break.
 - **[getting-started.md](getting-started.md)** — preview locally, deploy, and verify.
-- **[diagrams/sequences.md](diagrams/sequences.md)** — deploy flow and the "tonight" status logic.
+- **[social-graphics.md](social-graphics.md)** — how the Facebook posts are built and rendered.
+- **[diagrams/sequences.md](diagrams/sequences.md)** — deploy flow, the "tonight" status logic,
+  and the social graphic render.
 
 ---
 

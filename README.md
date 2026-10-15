@@ -31,8 +31,9 @@ Full wiki in **[`docs/wiki/`](docs/wiki/README.md)**:
 - [Overview and page map](docs/wiki/README.md)
 - [Architecture](docs/wiki/architecture.md) — hosting, domain, the homepage status script
 - [Editing the content](docs/wiki/content-editing.md) — how to change copy, **and the invariants not to break**
+- [Social media graphics](docs/wiki/social-graphics.md) — how the Facebook posts are built and rendered
 - [Getting started](docs/wiki/getting-started.md) — preview, deploy, verify
-- [Sequence diagrams](docs/wiki/diagrams/sequences.md) — deploy and status flows
+- [Sequence diagrams](docs/wiki/diagrams/sequences.md) — deploy, status and render flows
 
 ## Social media images
 

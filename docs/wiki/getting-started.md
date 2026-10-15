@@ -51,6 +51,20 @@ git push origin main
 GitHub Pages rebuilds automatically from `main`. **Allow ~1–2 minutes**, then hard-refresh the
 live site (the CDN caches for a few minutes; the `cache-control` max-age is 600s).
 
+## Rendering a social graphic
+
+PNGs in `social/` are generated, not drawn — see [social-graphics.md](social-graphics.md) for the
+full procedure and the flags that matter. The short version, from `social/`:
+
+```bash
+google-chrome --headless=new --no-sandbox --disable-gpu --hide-scrollbars \
+  --force-device-scale-factor=1 --window-size=1080,1080 --virtual-time-budget=8000 \
+  --screenshot=calcutta-post-square.png "file://$PWD/calcutta-square.html"
+```
+
+Rendered PNGs are committed, so a graphic change is an HTML edit **and** a binary diff in the same
+commit.
+
 ## Verify the deploy actually landed
 
 Don't trust the push alone — check the artifact:
@@ -93,13 +107,31 @@ grep -rn "script.google.com\|GOOGLE_SHEET_URL\|DINER_FEAST_RESERVATION" *.html  
 ```
 
 **5. Every internal link and asset resolves.** In particular `favicon.svg`,
-`images/hero_banner.jpg` and `rules.html`.
+`images/hero_banner.jpg`, `rules.html` and `calcutta.html`.
 
-**6. Page titles are clean and each page's `og:url` is its own URL.**
+```bash
+# every local href/src on every page exists on disk
+python3 - <<'PY'
+import re, os
+bad = []
+for f in [x for x in os.listdir('.') if x.endswith('.html')]:
+    for m in re.findall(r'(?:href|src)="([^"]+)"', open(f).read()):
+        if m.startswith(('http', '#', 'mailto:', 'tel:', 'data:')):
+            continue
+        t = m.split('#')[0].split('?')[0]
+        if t and not os.path.exists(t):
+            bad.append(f'{f} -> {m}')
+print('broken:', bad or 'NONE')
+PY
+```
+
+**6. Page titles are clean and each page's `og:url` is its own URL.** A new page missing from
+`sitemap.xml` will not be indexed — check `sitemap.xml` too.
 
 ## Where to go next
 
 - [README.md](README.md) — what the site is, page map, key facts
 - [architecture.md](architecture.md) — hosting, domain, the status script
 - [content-editing.md](content-editing.md) — how to edit copy, and the invariants
-- [diagrams/sequences.md](diagrams/sequences.md) — deploy and status flows
+- [social-graphics.md](social-graphics.md) — building and rendering the Facebook graphics
+- [diagrams/sequences.md](diagrams/sequences.md) — deploy, status and render flows

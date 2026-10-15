@@ -1,0 +1,18 @@
+{
+  "repo_name": "hawkinle.github.io",
+  "site": "Upper Horton Sports Club (upperhortonsportsclub.com.au)",
+  "source_path": "/home/leith/AI/Meat_fest/club_site",
+  "source_sha": "287aeb37d61c589fbe577519386b1cc171bd58d7",
+  "generated_at": "2026-10-15T04:32:05Z",
+  "generator": "hermes-agent code-wiki skill v0.1.0",
+  "shape": "reduced (static site, no modules/ or class-diagram.md)",
+  "modules_documented": [],
+  "pages": [
+    "README.md",
+    "architecture.md",
+    "getting-started.md",
+    "content-editing.md",
+    "social-graphics.md",
+    "diagrams/sequences.md"
+  ]
+}
